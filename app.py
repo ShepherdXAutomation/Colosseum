@@ -230,5 +230,16 @@ def change_profile_picture():
     
     return redirect(url_for('index'))
 
+@app.route('/main_menu')
+def main_menu():
+    user = None
+    if 'user_id' in session:
+        conn = sqlite3.connect('game.db')
+        c = conn.cursor()
+        c.execute('SELECT * FROM players WHERE id = ?', (session['user_id'],))
+        user = c.fetchone()
+        conn.close()
+    return render_template('main_menu.html', user=user)
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)

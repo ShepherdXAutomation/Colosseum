@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Menu</title>
+    <title>{% if user %}Main Menu{% else %}The Colosseum{% endif %}</title>
     <style>
         body {
             margin: 0;
@@ -89,7 +89,7 @@
     </div>
     <div id="mainMenu" class="menu active">
         <div class="menu-container">
-            <h1>Main Menu</h1>
+            <h1>{% if user %}Main Menu{% else %}The Colosseum{% endif %}</h1>
             {% if user %}
                 <button id="characterCollectionButton" onclick="window.location.href='/character_collection'">Character Collection</button>
                 <button id="colosseumButton">Colosseum</button>

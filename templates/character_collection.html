@@ -13,9 +13,12 @@
             font-family: Arial, sans-serif;
             background-image: url('/static/A_pixel_art_background_of_a_Medieval_Colosseum.png');
             background-size: cover;
-            background-repeat: no-repeat; /* Ensure no tiling */
-            background-attachment: fixed; /* Fix background to viewport */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-position: center;
+        }
+        html, body {
+            height: 100%;
         }
         .menu-container {
             background-color: rgba(139, 69, 19, 0.8);
@@ -73,7 +76,7 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="back-button" onclick="window.location.href='/main_menu'">Back</div>
+        <div class="back-button" onclick="window.location.href='/'">Back</div>
     </div>
 </body>
 </html>
