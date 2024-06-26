@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Collection</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            background-image: url('/static/A_pixel_art_background_of_a_Medieval_Colosseum.png');
+            background-size: cover;
+            background-repeat: no-repeat; /* Ensure no tiling */
+            background-attachment: fixed; /* Fix background to viewport */
+            background-position: center;
+        }
+        .menu-container {
+            background-color: rgba(139, 69, 19, 0.8);
+            border: 2px solid #8B4513;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+            padding: 20px;
+        }
+        .grid-item {
+            width: 120px;
+            height: 150px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .grid-item img {
+            width: 80px;
+            height: 80px;
+        }
+        .grid-item p {
+            margin: 5px 0 0;
+            text-align: center;
+        }
+        .back-button {
+            background-color: rgba(139, 69, 19, 0.8); /* Brownish box */
+            border: 2px solid #8B4513; /* Brownish border */
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1 style="color:rgb(235, 230, 230); text-align: center;">Character Collection</h1>
+        <div class="grid">
+            {% for character in characters %}
+                <div class="grid-item" onclick="window.location.href='/character_editor/{{ character[0] }}'">
+                    <img src="{{ character[2] }}" alt="{{ character[1] }}">
+                    <p>{{ character[1] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="back-button" onclick="window.location.href='/main_menu'">Back</div>
+    </div>
+</body>
+</html>

@@ -90,10 +90,11 @@
     <div id="mainMenu" class="menu active">
         <div class="menu-container">
             <h1>Main Menu</h1>
-            <button id="characterCollectionButton">Character Collection</button>
-            <button id="colosseumButton">Colosseum</button>
-            <button id="talkToCharactersButton">Talk to Your Characters</button>
-            <button class="signup-button" onclick="window.location.href='/signup'">Sign Up</button>
+            {% if user %}
+                <button id="characterCollectionButton" onclick="window.location.href='/character_collection'">Character Collection</button>
+                <button id="colosseumButton">Colosseum</button>
+                <button id="talkToCharactersButton">Talk to Your Characters</button>
+            {% endif %}
         </div>
     </div>
 </body>

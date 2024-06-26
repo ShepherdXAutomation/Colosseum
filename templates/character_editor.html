@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Editor</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            background-image: url('/static/A_pixel_art_background_of_a_Medieval_Colosseum.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .editor-container {
+            background-color: rgba(139, 69, 19, 0.8);
+            border: 2px solid #8B4513;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            margin-top: 50px;
+            overflow-y: auto;
+            max-height: 80vh; /* Adjust this value as needed */
+        }
+        .editor-container h1 {
+            text-align: center;
+        }
+        .editor-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .editor-container label {
+            margin: 5px 0;
+        }
+        .editor-container input, .editor-container button {
+            padding: 10px;
+            font-size: 18px;
+        }
+        .editor-container button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-container">
+        <h1>Edit Character</h1>
+        <form action="/update_character/{{ character.id }}" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{ character.name }}" required>
+
+            <label for="hp">HP</label>
+            <input type="number" id="hp" name="hp" value="{{ character.hp }}" required>
+
+            <label for="attack">Attack</label>
+            <input type="number" id="attack" name="attack" value="{{ character.attack }}" required>
+
+            <label for="defense">Defense</label>
+            <input type="number" id="defense" name="defense" value="{{ character.defense }}" required>
+
+            <label for="speed">Speed</label>
+            <input type="number" id="speed" name="speed" value="{{ character.speed }}" required>
+
+            <label for="luck">Luck</label>
+            <input type="number" id="luck" name="luck" value="{{ character.luck }}" required>
+
+            <label for="magic">Magic</label>
+            <input type="number" id="magic" name="magic" value="{{ character.magic }}" required>
+
+            <label for="level">Level</label>
+            <input type="number" id="level" name="level" value="{{ character.level }}" required>
+
+            <label for="skill1">Skill 1</label>
+            <input type="text" id="skill1" name="skill1" value="{{ character.skill1 }}" required>
+
+            <label for="skill2">Skill 2</label>
+            <input type="text" id="skill2" name="skill2" value="{{ character.skill2 }}">
+
+            <label for="personality">Personality</label>
+            <input type="text" id="personality" name="personality" value="{{ character.personality }}" required>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>
