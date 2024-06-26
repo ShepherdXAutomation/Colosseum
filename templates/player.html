@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            background-image: url('/static/A_pixel_art_background_of_a_Medieval_Colosseum.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .menu-container {
+            background-color: rgba(139, 69, 19, 0.8); /* Brownish box */
+            border: 2px solid #8B4513; /* Brownish border */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .grid-item {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .grid-item img {
+            width: 100px;
+            height: 100px;
+        }
+        .grid-item p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Player: {{ player[1] }}</h1>
+        <h2>Characters:</h2>
+        <div class="grid">
+            {% for character in characters %}
+                <div class="grid-item">
+                    <img src="{{ character[7] }}" alt="{{ character[0Here is the continuation of the `player.html` template and the integration with the existing code:
+
+```html
+                    <img src="{{ character[7] }}" alt="{{ character[0] }}">
+                    <p>{{ character[0] }}</p>
+                    <p>HP: {{ character[1] }}</p>
+                    <p>Attack: {{ character[2] }}</p>
+                    <p>Defense: {{ character[3] }}</p>
+                    <p>Speed: {{ character[4] }}</p>
+                    <p>Luck: {{ character[5] }}</p>
+                    <p>Magic: {{ character[6] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

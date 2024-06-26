@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            background-image: url('/static/A_pixel_art_background_of_a_Medieval_Colosseum.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .menu, .section {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .menu.active, .section.active {
+            display: flex;
+        }
+        .menu-container {
+            background-color: rgba(139, 69, 19, 0.8); /* Brownish box */
+            border: 2px solid #8B4513; /* Brownish border */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+        }
+        .menu button, .back-button {
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .user-info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+            background-color: rgba(139, 69, 19, 0.8); /* Brownish box for username */
+            border: 2px solid #8B4513; /* Brownish border */
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .user-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: block;
+            margin: auto;
+            cursor: pointer;
+        }
+        .signup-button {
+            background: none;
+            border: none;
+            color: yellow; /* Make the text yellow to stand out */
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        #profile-picture-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-info">
+        {% if user %}
+            <img src="{{ user[3] }}" alt="Profile Picture" onclick="document.getElementById('profile_picture').click();">
+            <p>{{ user[1] }}</p>
+            <a href="/logout" style="color: yellow;">Logout</a>
+            <form id="profile-picture-form" action="/change_profile_picture" method="post" enctype="multipart/form-data">
+                <input type="file" name="profile_picture" id="profile_picture" style="display:none;" onchange="document.getElementById('profile-picture-form').submit();">
+            </form>
+        {% else %}
+            <a href="/login" style="color: yellow;">Login</a>
+            <a href="/signup" style="color: yellow;">Sign Up</a>
+        {% endif %}
+    </div>
+    <div id="mainMenu" class="menu active">
+        <div class="menu-container">
+            <h1>Main Menu</h1>
+            <button id="characterCollectionButton">Character Collection</button>
+            <button id="colosseumButton">Colosseum</button>
+            <button id="talkToCharactersButton">Talk to Your Characters</button>
+            <button class="signup-button" onclick="window.location.href='/signup'">Sign Up</button>
+        </div>
+    </div>
+</body>
+</html>
