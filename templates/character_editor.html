@@ -53,9 +53,10 @@
         }
         .editor-container button {
             cursor: pointer;
-            margin-top: 20px;
             padding: 10px;
             font-size: 18px;
+            width: 100px;
+            height: 50px;
         }
         .image-container {
             text-align: center;
@@ -64,6 +65,17 @@
         .image-container img {
             width: 64px;
             height: 64px;
+        }
+        .text-label {
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #8B4513;
+            border-radius: 5px;
+            background-color: rgba(139, 69, 19, 0.6);
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
         }
     </style>
     <script>
@@ -88,60 +100,70 @@
             <img src="{{ character['image_path'] }}" alt="{{ character['name'] }}">
         </div>
         <p>Available Points: <span id="available_points">{{ character['available_points'] }}</span></p>
-        <form action="/update_character/{{ character['id'] }}" method="post">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" value="{{ character['name'] }}" required>
+        <form action="/character_editor/{{ character['id'] }}" method="post">
+            <div class="attribute-row">
+                <label for="name">Name</label>
+                <p class="text-label" id="name">{{ character['name'] }}</p>
+            </div>
 
             <div class="attribute-row">
                 <label for="hp">HP</label>
                 <button type="button" onclick="updateAttribute('hp', -1)">-</button>
-                <input type="number" id="hp" name="hp" value="{{ character['hp'] }}" readonly required>
+                <input type="number" id="hp" name="hp" value="{{ character['hp'] }}" required>
                 <button type="button" onclick="updateAttribute('hp', 1)">+</button>
             </div>
             <div class="attribute-row">
                 <label for="attack">Attack</label>
                 <button type="button" onclick="updateAttribute('attack', -1)">-</button>
-                <input type="number" id="attack" name="attack" value="{{ character['attack'] }}" readonly required>
+                <input type="number" id="attack" name="attack" value="{{ character['attack'] }}" required>
                 <button type="button" onclick="updateAttribute('attack', 1)">+</button>
             </div>
             <div class="attribute-row">
                 <label for="defense">Defense</label>
                 <button type="button" onclick="updateAttribute('defense', -1)">-</button>
-                <input type="number" id="defense" name="defense" value="{{ character['defense'] }}" readonly required>
+                <input type="number" id="defense" name="defense" value="{{ character['defense'] }}" required>
                 <button type="button" onclick="updateAttribute('defense', 1)">+</button>
             </div>
             <div class="attribute-row">
                 <label for="speed">Speed</label>
                 <button type="button" onclick="updateAttribute('speed', -1)">-</button>
-                <input type="number" id="speed" name="speed" value="{{ character['speed'] }}" readonly required>
+                <input type="number" id="speed" name="speed" value="{{ character['speed'] }}" required>
                 <button type="button" onclick="updateAttribute('speed', 1)">+</button>
             </div>
             <div class="attribute-row">
                 <label for="luck">Luck</label>
                 <button type="button" onclick="updateAttribute('luck', -1)">-</button>
-                <input type="number" id="luck" name="luck" value="{{ character['luck'] }}" readonly required>
+                <input type="number" id="luck" name="luck" value="{{ character['luck'] }}" required>
                 <button type="button" onclick="updateAttribute('luck', 1)">+</button>
             </div>
             <div class="attribute-row">
                 <label for="magic">Magic</label>
                 <button type="button" onclick="updateAttribute('magic', -1)">-</button>
-                <input type="number" id="magic" name="magic" value="{{ character['magic'] }}" readonly required>
+                <input type="number" id="magic" name="magic" value="{{ character['magic'] }}" required>
                 <button type="button" onclick="updateAttribute('magic', 1)">+</button>
             </div>
 
-            <label for="level">Level</label>
-            <p id="level">{{ character['level'] }}</p>
-
-            <label for="skill1">Skill 1</label>
-            <p id="skill1">{{ character['skill1'] }}</p>
-
-            <label for="skill2">Skill 2</label>
-            <p id="skill2">{{ character['skill2'] }}</p>
-
-            <label for="personality">Personality</label>
-            <p id="personality">{{ character['personality'] }}</p>
+            <div class="attribute-row">
+                <label for="level">Level</label>
+                <p class="text-label" id="level">{{ character['level'] }}</p>
+            </div>
 
             <div class="attribute-row">
+                <label for="skill1">Skill 1</label>
+                <p class="text-label" id="skill1">{{ character['skill1'] }}</p>
+            </div>
+
+            <div class="attribute-row">
+                <label for="skill2">Skill 2</label>
+                <p class="text-label" id="skill2">{{ character['skill2'] }}</p>
+            </div>
+
+            <div class="attribute-row">
+                <label for="personality">Personality</label>
+                <p class="text-label" id="personality">{{ character['personality'] }}</p>
+            </div>
+
+            <div class="button-container">
                 <button type="submit">Save</button>
                 <button type="button" onclick="window.location.href='/character_collection'">Cancel</button>
             </div>

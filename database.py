@@ -4,11 +4,6 @@ def init_db():
     conn = sqlite3.connect('game.db')
     c = conn.cursor()
 
-    # Drop tables if they exist to start fresh
-    c.execute('DROP TABLE IF EXISTS player_characters')
-    c.execute('DROP TABLE IF EXISTS characters')
-    c.execute('DROP TABLE IF EXISTS players')
-
     # Create players table if not exists
     c.execute('''CREATE TABLE IF NOT EXISTS players (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -31,17 +26,49 @@ def init_db():
                     skill1 TEXT,
                     skill2 TEXT,
                     image_path TEXT,
-                    personality TEXT,
-                    available_points INTEGER DEFAULT 0
+                    personality TEXT
                 )''')
 
     # Create player_characters table if not exists
     c.execute('''CREATE TABLE IF NOT EXISTS player_characters (
                     player_id INTEGER,
                     character_id INTEGER,
+                    available_points INTEGER DEFAULT 0,
                     FOREIGN KEY (player_id) REFERENCES players(id),
                     FOREIGN KEY (character_id) REFERENCES characters(id)
                 )''')
+
+    conn.commit()
+    conn.close()
+
+def add_columns_if_not_exist():
+    conn = sqlite3.connect('game.db')
+    c = conn.cursor()
+
+    try:
+        c.execute('ALTER TABLE characters ADD COLUMN level INTEGER')
+    except sqlite3.OperationalError as e:
+        print(f"Column 'level' already exists: {e}")
+
+    try:
+        c.execute('ALTER TABLE characters ADD COLUMN skill1 TEXT')
+    except sqlite3.OperationalError as e:
+        print(f"Column 'skill1' already exists: {e}")
+
+    try:
+        c.execute('ALTER TABLE characters ADD COLUMN skill2 TEXT')
+    except sqlite3.OperationalError as e:
+        print(f"Column 'skill2' already exists: {e}")
+
+    try:
+        c.execute('ALTER TABLE characters ADD COLUMN personality TEXT')
+    except sqlite3.OperationalError as e:
+        print(f"Column 'personality' already exists: {e}")
+
+    try:
+        c.execute('ALTER TABLE player_characters ADD COLUMN available_points INTEGER DEFAULT 0')
+    except sqlite3.OperationalError as e:
+        print(f"Column 'available_points' already exists: {e}")
 
     conn.commit()
     conn.close()
@@ -60,8 +87,21 @@ def insert_initial_characters():
             "skill1": "Harvest",
             "skill2": "Craft",
             "image_path": "/static/villager.png",
-            "personality": "Hardworking and friendly.",
-            "available_points": 0
+            "personality": "Hardworking and friendly."
+        },
+        {
+            "name": "Friendly Dog",
+            "hp": 60,
+            "attack": 7,
+            "defense": 4,
+            "speed": 8,
+            "luck": 10,
+            "magic": 0,
+            "level": 1,
+            "skill1": "Fetch",
+            "skill2": "Bark",
+            "image_path": "/static/shaggy_brown_dog.png",
+            "personality": "Loyal and playful."
         },
         # Add other characters here...
     ]
@@ -70,23 +110,13 @@ def insert_initial_characters():
     c = conn.cursor()
     
     for char in characters:
-        c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality, available_points)
-                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                  (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["available_points"]))
+        c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality)
+                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                  (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"]))
     
     conn.commit()
     conn.close()
 
-def debug_characters_table():
-    conn = sqlite3.connect('game.db')
-    c = conn.cursor()
-    c.execute('PRAGMA table_info(characters)')
-    columns = c.fetchall()
-    print("Characters table columns:")
-    for column in columns:
-        print(column)
-    conn.close()
-
 init_db()
+add_columns_if_not_exist()
 insert_initial_characters()
-debug_characters_table()
