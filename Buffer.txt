@@ -31,8 +31,7 @@ def init_db():
                     skill1 TEXT,
                     skill2 TEXT,
                     image_path TEXT,
-                    personality TEXT,
-                    available_points INTEGER DEFAULT 0
+                    personality TEXT
                 )''')
     
     # Create player_characters table
@@ -43,6 +42,22 @@ def init_db():
                     FOREIGN KEY (character_id) REFERENCES characters(id)
                 )''')
     
+    # Add columns if they do not exist
+    try:
+        c.execute('ALTER TABLE characters ADD COLUMN level INTEGER')
+    except sqlite3.OperationalError:
+        pass  # Column already exists
+
+    try:
+        c.execute('ALTER TABLE characters ADD COLUMN skill1 TEXT')
+    except sqlite3.OperationalError:
+        pass  # Column already exists
+
+    try:
+        c.execute('ALTER TABLE characters ADD COLUMN skill2 TEXT')
+    except sqlite3.OperationalError:
+        pass  # Column already exists
+
     conn.commit()
     conn.close()
 
@@ -60,8 +75,7 @@ def insert_initial_characters():
             "skill1": "Harvest",
             "skill2": "Craft",
             "image_path": "/static/villager.png",
-            "personality": "Hardworking and friendly.",
-            "available_points": 0
+            "personality": "Hardworking and friendly."
         },
         # Add other characters here...
     ]
@@ -70,9 +84,9 @@ def insert_initial_characters():
     c = conn.cursor()
     
     for char in characters:
-        c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality, available_points)
-                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                  (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["available_points"]))
+        c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality)
+                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                  (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"]))
     
     conn.commit()
     conn.close()
@@ -122,6 +136,7 @@ def signup():
         return redirect(url_for('index'))
     return render_template('signup.html')
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -166,10 +181,10 @@ def character_collection():
 def character_editor(character_id):
     if 'user_id' not in session:
         return redirect(url_for('login'))
-
+    
     conn = sqlite3.connect('game.db')
     c = conn.cursor()
-
+    
     if request.method == 'POST':
         # Update character stats
         hp = request.form['hp']
@@ -179,39 +194,23 @@ def character_editor(character_id):
         luck = request.form['luck']
         magic = request.form['magic']
         level = request.form['level']
-
+        skill1 = request.form['skill1']
+        skill2 = request.form['skill2']
+        
         c.execute('''UPDATE characters
-                     SET hp = ?, attack = ?, defense = ?, speed = ?, luck = ?, magic = ?, level = ?
+                     SET hp = ?, attack = ?, defense = ?, speed = ?, luck = ?, magic = ?, level = ?, skill1 = ?, skill2 = ?
                      WHERE id = ?''',
-                  (hp, attack, defense, speed, luck, magic, level, character_id))
+                  (hp, attack, defense, speed, luck, magic, level, skill1, skill2, character_id))
         conn.commit()
         conn.close()
-
+        
         return redirect(url_for('character_collection'))
-
+    
     c.execute('SELECT * FROM characters WHERE id = ?', (character_id,))
     character = c.fetchone()
     conn.close()
-
-    character_data = {
-        "id": character[0],
-        "name": character[1],
-        "hp": character[2],
-        "attack": character[3],
-        "defense": character[4],
-        "speed": character[5],
-        "luck": character[6],
-        "magic": character[7],
-        "level": character[8],
-        "skill1": character[9],
-        "skill2": character[10],
-        "image_path": character[11],
-        "personality": character[12],
-        "available_points": character[13]
-    }
-
-    return render_template('character_editor.html', character=character_data)
-
+    
+    return render_template('character_editor.html', character=character)
 
 @app.route('/change_profile_picture', methods=['POST'])
 def change_profile_picture():
@@ -230,6 +229,17 @@ def change_profile_picture():
         conn.close()
     
     return redirect(url_for('index'))
+
+@app.route('/main_menu')
+def main_menu():
+    user = None
+    if 'user_id' in session:
+        conn = sqlite3.connect('game.db')
+        c = conn.cursor()
+        c.execute('SELECT * FROM players WHERE id = ?', (session['user_id'],))
+        user = c.fetchone()
+        conn.close()
+    return render_template('main_menu.html', user=user)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)

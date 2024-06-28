@@ -1,13 +1,32 @@
 import sqlite3
 
-def init_db():
+def clean_up_duplicates():
     conn = sqlite3.connect('game.db')
     c = conn.cursor()
 
-    # Drop tables if they exist to start fresh
-    c.execute('DROP TABLE IF EXISTS player_characters')
-    c.execute('DROP TABLE IF EXISTS characters')
-    c.execute('DROP TABLE IF EXISTS players')
+    # Find duplicate characters for each player and remove them
+    c.execute('''DELETE FROM player_characters
+                 WHERE rowid NOT IN (SELECT MIN(rowid)
+                                     FROM player_characters
+                                     GROUP BY player_id, character_id)''')
+
+    conn.commit()
+    conn.close()
+
+def clear_tables():
+    conn = sqlite3.connect('game.db')
+    c = conn.cursor()
+
+    c.execute('DELETE FROM player_characters')
+    c.execute('DELETE FROM characters')
+    c.execute('DELETE FROM players')
+    conn.commit()
+    conn.close()
+import sqlite3
+
+def init_db():
+    conn = sqlite3.connect('game.db')
+    c = conn.cursor()
 
     # Create players table if not exists
     c.execute('''CREATE TABLE IF NOT EXISTS players (
@@ -46,6 +65,26 @@ def init_db():
     conn.commit()
     conn.close()
 
+def insert_initial_players():
+    players = [
+        ("drew", "hello", None),
+        ("drew123", "poop", "static\\DALL·E 2024-06-26 14.09.36 - Create a 64x64 bit pixel art mage character. The mage should have a blue robe, a tall pointed hat, holding a staff with a glowing crystal at the top, .png"),
+        ("dang", "poop", "static\\DALL·E 2024-06-26 14.10.00 - Create a 64x64 bit pixel art knight character. The knight should have silver armor, a helmet with a plume, holding a sword and shield, and a determine.png"),
+        ("Drewskie", "zoskov-nAgmum-fuggi4", "static\\IMG_2330.webp"),
+        ("MotherUnceasing", "W4ri0!", "static\\IMG_6126.jpeg"),
+        ("test", "test", "static\\IMG_2330.webp"),
+        ("Drew1", "jedkod-Respoh-5rovca", "static\\IMG_2445.jpeg")
+    ]
+
+    conn = sqlite3.connect('game.db')
+    c = conn.cursor()
+    
+    for player in players:
+        c.execute('INSERT INTO players (username, password, profile_picture) VALUES (?, ?, ?)', player)
+    
+    conn.commit()
+    conn.close()
+
 def insert_initial_characters():
     characters = [
         {
@@ -76,17 +115,21 @@ def insert_initial_characters():
     
     conn.commit()
     conn.close()
-
-def debug_characters_table():
+    
     conn = sqlite3.connect('game.db')
     c = conn.cursor()
-    c.execute('PRAGMA table_info(characters)')
-    columns = c.fetchall()
-    print("Characters table columns:")
-    for column in columns:
-        print(column)
+    
+    # Insert one character for each player
+    for player_id in range(1, 8):
+        for char in characters:
+            c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality, available_points)
+                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                      (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["available_points"]))
+            
+            character_id = c.lastrowid
+            c.execute('INSERT INTO player_characters (player_id, character_id) VALUES (?, ?)', (player_id, character_id))
+    
+    conn.commit()
     conn.close()
 
-init_db()
-insert_initial_characters()
-debug_characters_table()
+clear_tables()
