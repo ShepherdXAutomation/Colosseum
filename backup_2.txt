@@ -1,152 +1,90 @@
-import sqlite3
-import tkinter as tk
-from tkinter import ttk
+def send_chatgpt_api(character, chat_input, memories):
+    """
+    Sends chat input and memories to OpenAI's API and returns the response.
 
-class DatabaseViewer:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Database Viewer")
-        self.root.geometry("1000x600")  # Set window size
+    :param character: The character's data (name, personality, etc.)
+    :param chat_input: The player's input message.
+    :param memories: A list of memories for context in the chat.
+    :return: The response from the OpenAI API.
+    """
+    print("----------------------------------------------------------------------new chat------------------------------------------------------------------")
+    player_id = session.get('user_id')  
+    if not player_id:
+        raise ValueError("No player_id found in session. Please ensure the player is logged in.")
+    positive_points = character['positive_points']  # default to 0 if not found
+    neutral_points = character['neutral_points'] / 3
+    print(f"Because of their commonality, neutral points are weighed down:  {neutral_points}")
+    negative_points = character['negative_points']
+    response_tone = "normal"
 
-        self.conn = sqlite3.connect('game.db')
-        self.c = self.conn.cursor()
+    if positive_points > neutral_points and positive_points > negative_points:
+        response_tone = f"You trust this person. Respond positively to them."
+    elif negative_points > neutral_points and negative_points > positive_points:
+        response_tone = f"You do not like this person. Respond terse with them."
+    else:
+        response_tone = f"You do not feel a particular way towards this person. Respond indifferently to them."
 
-        self.create_widgets()
-        self.populate_all_tables()
+    
+    # System message to set the tone of the assistant
+        # System message to set the tone of the assistant
 
-    def create_widgets(self):
-        self.tab_control = ttk.Notebook(self.root)
+
+    # Combine the memories into a single context string
+    memory_context = "\n".join([f"Memory {i+1}: {memory}" for i, memory in enumerate(memories)])
+    
+    system_message = (
+       f"You are {character['name']}, a character with the personality: {character['personality_description']}. {response_tone}"
+       f"These encounters are happening in a medieval tavern. You don't need to mention the tavern unless it comes up in chat."
+       f"All characters speak with a medieval accent and are not overly polite. They are living their daily lives and may not be helpful."
+       f"You and the user are at a medieval tavern called the Creaky Wheel."
+       f"Use the following memory context to guide your response: {memory_context}"
+       f"Based on the context of this interaction, determine if the user is explicitly asking for the character's name."
+       f"Respond with a single word: 'Yes' if it's clear the user is asking for the name, and 'No' otherwise."
+       f"Be sure to only say 'Yes' if the user explicitly asks for the name or implies it very clearly."
+       f"The 'Yes' or 'No' go after the message you send back."
+       f"Every response should end with a period."
+    )
+    # Print the data being sent to the API
+    print("Sending to OpenAI API:")
+    print(f"Memory Context: {memory_context}")
+    print(f"User Input: {chat_input}")
+    print(f"Response Tone: {response_tone}")
+
+    try:
+        # Call to OpenAI's ChatCompletion API with the new format
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",  # or "gpt-4" if you're using GPT-4
+            messages=[
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": f"{memory_context}\n\n{chat_input}\n\nRespond with your message, followed by 'yes' if the user is asking for your name, or 'no' if they are not asking your name. If they are saying hi, they are not asking your name. Usually, they are not asking your name unless they directly ask you 'what is your name'"}
+            ],
+            max_tokens=500,  # Adjust based on the length of response you want
+            temperature=0.8  # Adjust based on desired creativity level
+        )
+
+        # Extracting the text of the assistant's reply
+        assistant_reply = response.choices[0].message.content.strip()
+        message, has_name_question = parse_response(assistant_reply)
+
+        print(f"Message: {message}")
+        print(f"Asked Name: {has_name_question}")
+
+        if has_name_question == 'Yes.' and character['name_asked'] != 'yes':
+            update_name_asked(character['id'])
+            handle_name_request(character['id'])
         
-        self.characters_tab = ttk.Frame(self.tab_control)
-        self.players_tab = ttk.Frame(self.tab_control)
-        self.player_characters_tab = ttk.Frame(self.tab_control)
-        self.memories_tab = ttk.Frame(self.tab_control)
-        self.disposition_tab = ttk.Frame(self.tab_control)
+    # Now we evaluate how important this memory is
+        importance_result = evaluate_memory_importance(chat_input, message, memory_context)
+        importance_level_str, tone = importance_result
+        importance_level = int(importance_level_str)
+        update_disposition_points(character['id'], tone)
+        # Check if the importance level justifies saving the memory
+        if importance_level >= 5:  # Threshold for saving memory
+            print("Saving this memory since it is deemed important.")
+            save_memory(character['id'], player_id, assistant_reply)  # Assuming you pass character_id, player_id, etc.
 
-        self.tab_control.add(self.characters_tab, text='Characters')
-        self.tab_control.add(self.players_tab, text='Players')
-        self.tab_control.add(self.player_characters_tab, text='Player-Characters')
-        self.tab_control.add(self.memories_tab, text='Memories')
-        self.tab_control.add(self.disposition_tab, text='Disposition')
+        return assistant_reply
 
-        self.tab_control.pack(expand=1, fill='both')
-
-        # Create an Update button
-        update_button = tk.Button(self.root, text="Update", command=self.update_tables)
-        update_button.pack()
-
-        # Characters table
-        self.characters_tree = ttk.Treeview(self.characters_tab, columns=('ID', 'Name', 'HP', 'Attack', 'Defense', 'Speed', 'Luck', 'Magic', 'Level', 'Skill1', 'Skill2', 'Image Path', 'Personality', 'Available Points', 'Personality Description', 'Positive Points', 'Neutral Points', 'Negative Points', 'Username'), show='headings')
-        for col in self.characters_tree['columns']:
-            self.characters_tree.heading(col, text=col)
-        self.characters_tree.pack(expand=True, fill='both')
-
-        # Players table
-        self.players_tree = ttk.Treeview(self.players_tab, columns=('ID', 'Username', 'Password', 'Profile Picture'), show='headings')
-        for col in self.players_tree['columns']:
-            self.players_tree.heading(col, text=col)
-        self.players_tree.pack(expand=True, fill='both')
-
-        # Player-Characters table
-        self.player_characters_tree = ttk.Treeview(self.player_characters_tab, columns=('Player ID', 'Username', 'Character ID'), show='headings')
-        for col in self.player_characters_tree['columns']:
-            self.player_characters_tree.heading(col, text=col)
-        self.player_characters_tree.pack(expand=True, fill='both')
-
-        # Memories table
-        self.memories_tree = ttk.Treeview(self.memories_tab, columns=('ID', 'Character ID', 'Player ID', 'Username', 'Memory Log', 'Timestamp'), show='headings')
-        for col in self.memories_tree['columns']:
-            self.memories_tree.heading(col, text=col)
-        self.memories_tree.pack(expand=True, fill='both')
-
-        # Disposition table
-        self.disposition_tree = ttk.Treeview(self.disposition_tab, columns=('Player Username', 'Character Name', 'Level', 'Positive Points', 'Neutral Points', 'Negative Points'), show='headings')
-        for col in self.disposition_tree['columns']:
-            self.disposition_tree.heading(col, text=col)
-        self.disposition_tree.pack(expand=True, fill='both')
-
-    def populate_all_tables(self):
-        self.populate_characters_table()
-        self.populate_players_table()
-        self.populate_player_characters_table()
-        self.populate_memories_table()
-        self.populate_disposition_table()
-
-    def clear_tables(self):
-        """ Clear all tables before repopulating """
-        for tree in [self.characters_tree, self.players_tree, self.player_characters_tree, self.memories_tree, self.disposition_tree]:
-            for item in tree.get_children():
-                tree.delete(item)
-
-    def update_tables(self):
-        """ Clear and repopulate all tables when the Update button is clicked """
-        self.clear_tables()
-        self.populate_all_tables()
-
-    def adjust_column_widths(self, tree):
-        """
-        Automatically adjust the column widths to fit content with a max width of 80px.
-        """
-        for col in tree['columns']:
-            max_width = 80  # Set a maximum width for columns
-            col_width = max(len(col), 10) * 8  # Calculate width based on content length
-
-            # Iterate through each row to get maximum content length for that column
-            for row in tree.get_children():
-                cell_value = tree.item(row)['values'][tree['columns'].index(col)]
-                col_width = max(col_width, len(str(cell_value)) * 8)
-
-            col_width = min(col_width, max_width)  # Limit to max width
-            tree.column(col, width=col_width)
-
-    def populate_characters_table(self):
-        self.c.execute('''SELECT c.id, c.name, c.hp, c.attack, c.defense, c.speed, c.luck, c.magic, 
-                                 c.level, c.skill1, c.skill2, c.image_path, c.personality, c.available_points, 
-                                 c.personality_description, c.positive_points, c.neutral_points, c.negative_points, p.username
-                          FROM characters c
-                          LEFT JOIN player_characters pc ON c.id = pc.character_id
-                          LEFT JOIN players p ON pc.player_id = p.id''')
-        for row in self.c.fetchall():
-            self.characters_tree.insert('', tk.END, values=row)
-
-        self.adjust_column_widths(self.characters_tree)
-
-    def populate_players_table(self):
-        self.c.execute("SELECT * FROM players")
-        for row in self.c.fetchall():
-            self.players_tree.insert('', tk.END, values=row)
-
-        self.adjust_column_widths(self.players_tree)
-
-    def populate_player_characters_table(self):
-        self.c.execute('''SELECT pc.player_id, p.username, pc.character_id 
-                          FROM player_characters pc
-                          JOIN players p ON pc.player_id = p.id''')
-        for row in self.c.fetchall():
-            self.player_characters_tree.insert('', tk.END, values=row)
-
-        self.adjust_column_widths(self.player_characters_tree)
-
-    def populate_memories_table(self):
-        self.c.execute('''SELECT m.id, m.character_id, m.player_id, p.username, m.memory_log, m.timestamp
-                          FROM memories m
-                          JOIN players p ON m.player_id = p.id''')
-        for row in self.c.fetchall():
-            self.memories_tree.insert('', tk.END, values=row)
-
-        self.adjust_column_widths(self.memories_tree)
-
-    def populate_disposition_table(self):
-        self.c.execute('''SELECT p.username, c.name, c.level, c.positive_points, c.neutral_points, c.negative_points
-                          FROM characters c
-                          LEFT JOIN player_characters pc ON c.id = pc.character_id
-                          LEFT JOIN players p ON pc.player_id = p.id''')
-        for row in self.c.fetchall():
-            self.disposition_tree.insert('', tk.END, values=row)
-
-        self.adjust_column_widths(self.disposition_tree)
-
-
-root = tk.Tk()
-app = DatabaseViewer(root)
-root.mainloop()
+    except Exception as e:
+        print(f"An error occurred while calling the OpenAI API: {e}")
+        return None

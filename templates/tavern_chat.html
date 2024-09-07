@@ -6,6 +6,20 @@
     <title>Tavern Chat</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            background-image: url('/static/tavern.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Optional: Keeps the background fixed while scrolling */
+            height: 100vh; /* Makes sure the body covers the full viewport height */
+            width: 100vw;
+        }
         #chat-container {
             width: 80%;
             height: 400px;
@@ -13,10 +27,14 @@
             padding: 10px;
             overflow-y: scroll;
             margin-bottom: 20px;
+            background-color: sienna;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         #user-input {
             width: 70%;
             padding: 5px;
+            color: slategrey;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         #send-button {
             padding: 5px 10px;

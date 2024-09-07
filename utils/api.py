@@ -2,7 +2,7 @@ import os
 from flask import session
 from openai import OpenAI
 from dotenv import load_dotenv
-from database.db import get_db_connection, save_memory, update_disposition_points, update_name_asked
+from database.db import get_character_by_id, get_db_connection, save_memory, update_disposition_points, update_name_asked
 import requests
 
 import logging
@@ -43,76 +43,86 @@ def send_chatgpt_api(character, chat_input, memories):
     player_id = session.get('user_id')  
     if not player_id:
         raise ValueError("No player_id found in session. Please ensure the player is logged in.")
-    positive_points = character['positive_points']  # default to 0 if not found
+    
+    # Disposition and tone setting
+    positive_points = character['positive_points']
     neutral_points = character['neutral_points'] / 3
-    print(f"Because of their commonality, neutral points are weighed down:  {neutral_points}")
     negative_points = character['negative_points']
+    
+    print(f"Because of their commonality, neutral points are weighed down:  {neutral_points}")
+
     response_tone = "normal"
-
     if positive_points > neutral_points and positive_points > negative_points:
-        response_tone = f"You trust this person. Respond positively to them."
+        response_tone = "You trust this person. Respond positively to them."
     elif negative_points > neutral_points and negative_points > positive_points:
-        response_tone = f"You do not like this person. Respond terse with them."
+        response_tone = "You do not like this person. Respond terse with them."
     else:
-        response_tone = f"You do not feel a particular way towards this person. Respond indifferently to them."
+        response_tone = "You do not feel a particular way towards this person. Respond indifferently."
 
-    
-    # System message to set the tone of the assistant
-        # System message to set the tone of the assistant
-
-
-    # Combine the memories into a single context string
+    # Combine memories into a single context string
     memory_context = "\n".join([f"Memory {i+1}: {memory}" for i, memory in enumerate(memories)])
-    
-    system_message = (
-       f"You are {character['name']}, a character with the personality: {character['personality_description']}. {response_tone}"
-       f"These encounters are happening in a medieval tavern. You don't need to mention the tavern unless it comes up in chat."
-       f"All characters speak with a medieval accent and are not overly polite. They are living their daily lives and may not be helpful."
-       f"Use the following memory context to guide your response: {memory_context}"
-       f"Based on the context of this interaction, determine if the user is explicitly asking for the character's name."
-       f"Respond with a single word: 'Yes' if it's clear the user is asking for the name, and 'No' otherwise."
-       f"Be sure to only say 'Yes' if the user explicitly asks for the name or implies it very clearly."
-       f"The 'Yes' or 'No' go after the message you send back."
-       f"Every response should end with a period."
-    )
-    # Print the data being sent to the API
-    print("Sending to OpenAI API:")
-    print(f"Memory Context: {memory_context}")
-    print(f"User Input: {chat_input}")
-    print(f"Response Tone: {response_tone}")
 
+    # First, check if the user is asking for the name
+    system_message_check = (
+        f"Check if the user is explicitly asking for your name. Respond only with 'Yes' or 'No'. "
+        f"User Input: {chat_input}"
+    )
+
+    print("Sending check for name question...")
     try:
-        # Call to OpenAI's ChatCompletion API with the new format
+        # Make an API call to check if the user is asking for the name
+        response_check = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": system_message_check}
+            ],
+            max_tokens=10
+        )
+        
+        has_name_question = response_check.choices[0].message.content.strip()
+        print(f"Asked Name: {has_name_question}")
+
+        # If the user is asking for the name and the character's name has not been asked before, update the name
+        if has_name_question == "Yes" and character['name_asked'] != 'yes':
+            update_name_asked(character['id'])  # Mark name as asked
+            handle_name_request(character['id'])  # Generate and update the character's name
+            character = get_character_by_id(character['id'])  # Fetch the updated character with the new name
+
+        # Now that the name is updated, proceed to create the system message for the final response
+        system_message = (
+            f"You are {character['name']}, a character with the personality: {character['personality_description']}. {response_tone} "
+            f"These encounters are happening in a medieval tavern. The name of the tavern is the Creaky Wheel. "
+            f"All characters speak with a medieval accent and are not overly polite. They are living their daily lives and may not be helpful. "
+            f"Use the following memory context to guide your response: {memory_context}"
+        )
+
+        print(f"System Message: {system_message}")
+        print(f"User Input: {chat_input}")
+
+        # Call to OpenAI's ChatCompletion API for the actual response
         response = client.chat.completions.create(
-            model="gpt-4o-mini",  # or "gpt-4" if you're using GPT-4
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_message},
-                {"role": "user", "content": f"{memory_context}\n\n{chat_input}\n\nRespond with your message, followed by 'yes' if the user is asking for your name, or 'no' if they are not asking your name. If they are saying hi, they are not asking your name. Usually, they are not asking your name unless they directly ask you 'what is your name'"}
+                {"role": "user", "content": chat_input}
             ],
-            max_tokens=500,  # Adjust based on the length of response you want
-            temperature=0.6  # Adjust based on desired creativity level
+            max_tokens=500,
+            temperature=0.8
         )
 
         # Extracting the text of the assistant's reply
         assistant_reply = response.choices[0].message.content.strip()
-        message, has_name_question = parse_response(assistant_reply)
-
-        print(f"Message: {message}")
-        print(f"Asked Name: {has_name_question}")
-
-        if has_name_question and character['name_asked'] != 'yes':
-            update_name_asked(character['id'])
-            handle_name_request(character['id'])
         
-    # Now we evaluate how important this memory is
-        importance_result = evaluate_memory_importance(chat_input, message, memory_context)
+        # Now we evaluate how important this memory is
+        importance_result = evaluate_memory_importance(chat_input, assistant_reply, memory_context)
         importance_level_str, tone = importance_result
         importance_level = int(importance_level_str)
         update_disposition_points(character['id'], tone)
+
         # Check if the importance level justifies saving the memory
-        if importance_level >= 5:  # Threshold for saving memory
+        if importance_level >= 7:  # Threshold for saving memory
             print("Saving this memory since it is deemed important.")
-            save_memory(character['id'], player_id, assistant_reply)  # Assuming you pass character_id, player_id, etc.
+            save_memory(character['id'], player_id, assistant_reply)
 
         return assistant_reply
 
@@ -137,6 +147,7 @@ def evaluate_memory_importance(user_input, assistant_reply, memory_context):
         f"User Input: {user_input}\n\n"
         f"GPT Response: {assistant_reply}\n\n"
         f"Based on the context of this interaction, rate the importance of this memory for character development on a scale of 1 to 10. All names are considered important."
+        f"Likes and dislikes are important."
         f"Also, determine the tone of the interaction and return one of these three options: neutral, positive, or negative.\n"
         f"You should respond with a single number indicating the importance level, followed by a comma, then the tone as a single word (neutral, positive, or negative)."
         
