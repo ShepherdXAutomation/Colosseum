@@ -4,6 +4,8 @@ from database.db import get_character_by_id, get_memories, save_memory, get_chat
 
 import sqlite3
 
+from utils.api import send_chatgpt_api
+
 # Create the Blueprint for character routes
 characters_bp = Blueprint('characters', __name__)
 
@@ -144,34 +146,68 @@ def tavern_select():
     return render_template('tavern_select.html', characters=characters)
 
 
-@characters_bp.route('/tavern_chat', methods=['POST'])
-def tavern_chat():
+
+
+# Existing functions and routes...
+# (Keep all your existing functions and routes as they are)
+
+# Add this new function to handle Socket.IO events
+def handle_tavern_message(data):
     player_id = session.get('user_id')
-    character_id = request.form['character_id']  # Character selected by the player
-    chat_input = request.form.get('input')  # Chat input from the player
-
     if not player_id:
-        return redirect(url_for('auth.login'))  # Redirect to login if not logged in
+        return {'error': 'User not logged in'}
 
-    # Fetch character and memory data
+    character_id = data.get('character_id')
+    chat_input = data.get('message')
+
+    # Fetch character and check if it exists
     character = get_character_by_id(character_id)
+    if character is None:
+        return {'error': 'Character not found'}
+
     memories = get_memories(character_id, player_id)
 
-    # Check if the player has already provided chat input
-    if chat_input:
-        # Send the chat input and memories to ChatGPT for processing
-        response = send_chatgpt_api(character, chat_input, memories)
-        
-        # Save the chat interaction (memory) in the database
-        save_memory(character_id, player_id, response)
-
-        # Check if the player has reached a multiple of 10 chats for leveling up
-        chat_count = get_chat_count(character_id, player_id)
-        if chat_count % 10 == 0:
-            level_up_character(character_id)
-
-        return render_template('tavern_chat.html', response=response, character=character)
+    response = send_chatgpt_api(character, chat_input, memories)
     
-    # If no chat input yet, just show the chat page without response
+    save_memory(character_id, player_id, response)
+
+    chat_count = get_chat_count(character_id, player_id)
+    if chat_count % 10 == 0:
+        level_up_character(character_id)
+
+    return {'sender': character['name'], 'message': response}
+
+
+# Modify the tavern_chat route to work with both POST and GET methods
+@characters_bp.route('/tavern_chat', methods=['POST', 'GET'])
+def tavern_chat():
+    player_id = session.get('user_id')
+    if not player_id:
+        return redirect(url_for('auth.login'))
+
+    # Handle POST request (when form is submitted)
+    if request.method == 'POST':
+        character_id = request.form.get('character_id')
+        
+    # Handle GET request (in case the character_id is passed via URL query parameters)
+    else:
+        character_id = request.args.get('character_id')
+
+    # Check if character_id is None after both GET and POST
+    if not character_id:
+        flash("No character selected for chat.", "danger")
+        return redirect(url_for('characters.tavern_select'))
+
+    # Fetch the character data using the character_id
+    character = get_character_by_id(character_id)
+    
+    # Check if the character was found
+    if character is None:
+        flash("Character not found.", "danger")
+        return redirect(url_for('characters.tavern_select'))
+
     return render_template('tavern_chat.html', character=character)
+
+
+
 

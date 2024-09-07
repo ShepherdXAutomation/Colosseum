@@ -1,4 +1,3 @@
-<!-- tavern_select.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +11,8 @@
             <div style="margin-bottom: 20px;">
                 <h2>{{ character['name'] }}</h2>
                 <img src="{{ character['image_path'] }}" alt="{{ character['name'] }}" width="150">
+                
+                <!-- Form to select character and send to chat -->
                 <form method="POST" action="{{ url_for('characters.tavern_chat') }}">
                     <input type="hidden" name="character_id" value="{{ character['id'] }}">
                     <button type="submit">Chat with {{ character['name'] }}</button>

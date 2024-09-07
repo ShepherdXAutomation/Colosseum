@@ -1,26 +1,79 @@
-<!-- tavern_chat.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tavern Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        #chat-container {
+            width: 80%;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
+        }
+        #user-input {
+            width: 70%;
+            padding: 5px;
+        }
+        #send-button {
+            padding: 5px 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Chat with {{ character['name'] }}</h1>
 
-    <!-- Display the AI response, if there is one -->
-    {% if response %}
-        <div>
-            <p>{{ response }}</p>
-        </div>
-    {% endif %}
+    <div id="chat-container">
+        {% if response %}
+            <p><strong>{{ character['name'] }}:</strong> {{ response }}</p>
+        {% endif %}
+    </div>
 
-    <!-- Chat form -->
-    <form method="POST" action="{{ url_for('characters.tavern_chat') }}">
-        <input type="hidden" name="character_id" value="{{ character['id'] }}">
-        <textarea name="input" placeholder="Type your message here"></textarea>
-        <button type="submit">Send</button>
-    </form>
+    <input type="text" id="user-input" placeholder="Type your message here">
+    <button id="send-button">Send</button>
 
+    <br><br>
     <a href="{{ url_for('characters.tavern_select') }}">Back to Character Selection</a>
+
+    <script>
+        const socket = io();
+        const chatContainer = document.getElementById('chat-container');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+        const characterId = "{{ character['id'] }}";
+
+        sendButton.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                appendMessage('You', message);
+                socket.emit('send_message', {message: message, character_id: characterId});
+                userInput.value = '';
+            }
+        }
+
+        function appendMessage(sender, message) {
+            const messageElement = document.createElement('p');
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatContainer.appendChild(messageElement);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        socket.on('receive_message', function(data) {
+            appendMessage(data.sender, data.message);
+        });
+
+        // If there's an initial response, scroll to the bottom of the chat container
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    </script>
 </body>
 </html>

@@ -59,22 +59,37 @@ def init_db():
     conn.close()
 
 # Save a new memory in the database
+# Save memory in the format for future recall
 def save_memory(character_id, player_id, memory_log):
     conn = get_db_connection()
     c = conn.cursor()
+
+    # Check if the memory log is None or empty before saving
+    if memory_log is None or memory_log == '':
+        print(f"Warning: memory_log is empty for character_id {character_id} and player_id {player_id}.")
+        memory_log = "No memory log provided."
+
+    # Assuming memory_log is a simple string (you might need to adjust based on your use case)
+    formatted_memory = memory_log  # If it's already a string, no need to format
+
+    # Save memory to the database
     c.execute('INSERT INTO memories (character_id, player_id, memory_log) VALUES (?, ?, ?)',
-              (character_id, player_id, memory_log))
+              (character_id, player_id, formatted_memory))
     conn.commit()
     conn.close()
+
+
 
 # Fetch all memories for a character
 def get_memories(character_id, player_id):
     conn = get_db_connection()
     c = conn.cursor()
-    c.execute('SELECT * FROM memories WHERE character_id = ? AND player_id = ?', (character_id, player_id))
-    memories = c.fetchall()
+    c.execute('SELECT memory_log FROM memories WHERE character_id = ? AND player_id = ?', (character_id, player_id))
+    # Fetch as list of dictionaries or just memory logs
+    memories = [row['memory_log'] for row in c.fetchall()]
     conn.close()
     return memories
+
 
 # Get the count of interactions between player and character
 def get_chat_count(character_id, player_id):

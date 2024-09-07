@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+from flask_socketio import SocketIO, emit
 from views.auth import auth_bp
-from views.characters import characters_bp
+from views.characters import characters_bp, handle_tavern_message
 from database.db import init_db, add_columns_if_not_exist, insert_initial_characters, get_db_connection
 import os
 
@@ -11,6 +12,15 @@ app.secret_key = 'your_secret_key'  # Required for session management
 app.register_blueprint(auth_bp)
 app.register_blueprint(characters_bp)
 
+socketio = SocketIO(app)
+
+
+# Register the Socket.IO event handler
+@socketio.on('send_message')
+def socket_handle_message(data):
+    response = handle_tavern_message(data)
+    emit('receive_message', response)
+    
 def initialize_app():
     """
     Initialize the database and insert data. This should only run once when the app starts.
