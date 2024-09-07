@@ -35,8 +35,8 @@ class DatabaseViewer:
         update_button = tk.Button(self.root, text="Update", command=self.update_tables)
         update_button.pack()
 
-        # Characters table (added 'Name Asked' column)
-        self.characters_tree = ttk.Treeview(self.characters_tab, columns=('ID', 'Name', 'HP', 'Attack', 'Defense', 'Speed', 'Luck', 'Magic', 'Level', 'Skill1', 'Skill2', 'Image Path', 'Personality', 'Available Points', 'Personality Description', 'Positive Points', 'Neutral Points', 'Negative Points', 'Username', 'Name Asked'), show='headings')
+        # Characters table
+        self.characters_tree = ttk.Treeview(self.characters_tab, columns=('ID', 'Name', 'HP', 'Attack', 'Defense', 'Speed', 'Luck', 'Magic', 'Level', 'Skill1', 'Skill2', 'Image Path', 'Personality', 'Available Points', 'Personality Description', 'Positive Points', 'Neutral Points', 'Negative Points', 'Username'), show='headings')
         for col in self.characters_tree['columns']:
             self.characters_tree.heading(col, text=col)
         self.characters_tree.pack(expand=True, fill='both')
@@ -53,8 +53,8 @@ class DatabaseViewer:
             self.player_characters_tree.heading(col, text=col)
         self.player_characters_tree.pack(expand=True, fill='both')
 
-        # Memories table (with Character Name)
-        self.memories_tree = ttk.Treeview(self.memories_tab, columns=('ID', 'Character Name', 'Character ID', 'Player ID', 'Username', 'Memory Log', 'Timestamp'), show='headings')
+        # Memories table
+        self.memories_tree = ttk.Treeview(self.memories_tab, columns=('ID', 'Character ID', 'Player ID', 'Username', 'Memory Log', 'Timestamp'), show='headings')
         for col in self.memories_tree['columns']:
             self.memories_tree.heading(col, text=col)
         self.memories_tree.pack(expand=True, fill='both')
@@ -64,31 +64,6 @@ class DatabaseViewer:
         for col in self.disposition_tree['columns']:
             self.disposition_tree.heading(col, text=col)
         self.disposition_tree.pack(expand=True, fill='both')
-
-        # Add scrollbars after creating the treeviews
-        self.add_scrollbars()
-
-    def add_scrollbars(self):
-        """ Add horizontal scrollbars for each Treeview """
-        self.scrollbar_x_chars = ttk.Scrollbar(self.characters_tab, orient='horizontal', command=self.characters_tree.xview)
-        self.scrollbar_x_chars.pack(side=tk.BOTTOM, fill=tk.X)
-        self.characters_tree.configure(xscrollcommand=self.scrollbar_x_chars.set)
-
-        self.scrollbar_x_players = ttk.Scrollbar(self.players_tab, orient='horizontal', command=self.players_tree.xview)
-        self.scrollbar_x_players.pack(side=tk.BOTTOM, fill=tk.X)
-        self.players_tree.configure(xscrollcommand=self.scrollbar_x_players.set)
-
-        self.scrollbar_x_pc = ttk.Scrollbar(self.player_characters_tab, orient='horizontal', command=self.player_characters_tree.xview)
-        self.scrollbar_x_pc.pack(side=tk.BOTTOM, fill=tk.X)
-        self.player_characters_tree.configure(xscrollcommand=self.scrollbar_x_pc.set)
-
-        self.scrollbar_x_memories = ttk.Scrollbar(self.memories_tab, orient='horizontal', command=self.memories_tree.xview)
-        self.scrollbar_x_memories.pack(side=tk.BOTTOM, fill=tk.X)
-        self.memories_tree.configure(xscrollcommand=self.scrollbar_x_memories.set)
-
-        self.scrollbar_x_disp = ttk.Scrollbar(self.disposition_tab, orient='horizontal', command=self.disposition_tree.xview)
-        self.scrollbar_x_disp.pack(side=tk.BOTTOM, fill=tk.X)
-        self.disposition_tree.configure(xscrollcommand=self.scrollbar_x_disp.set)
 
     def populate_all_tables(self):
         self.populate_characters_table()
@@ -108,20 +83,40 @@ class DatabaseViewer:
         self.clear_tables()
         self.populate_all_tables()
 
+    def adjust_column_widths(self, tree):
+        """
+        Automatically adjust the column widths to fit content with a max width of 80px.
+        """
+        for col in tree['columns']:
+            max_width = 80  # Set a maximum width for columns
+            col_width = max(len(col), 10) * 8  # Calculate width based on content length
+
+            # Iterate through each row to get maximum content length for that column
+            for row in tree.get_children():
+                cell_value = tree.item(row)['values'][tree['columns'].index(col)]
+                col_width = max(col_width, len(str(cell_value)) * 8)
+
+            col_width = min(col_width, max_width)  # Limit to max width
+            tree.column(col, width=col_width)
+
     def populate_characters_table(self):
         self.c.execute('''SELECT c.id, c.name, c.hp, c.attack, c.defense, c.speed, c.luck, c.magic, 
                                  c.level, c.skill1, c.skill2, c.image_path, c.personality, c.available_points, 
-                                 c.personality_description, c.positive_points, c.neutral_points, c.negative_points, p.username, c.name_asked
+                                 c.personality_description, c.positive_points, c.neutral_points, c.negative_points, p.username
                           FROM characters c
                           LEFT JOIN player_characters pc ON c.id = pc.character_id
                           LEFT JOIN players p ON pc.player_id = p.id''')
         for row in self.c.fetchall():
             self.characters_tree.insert('', tk.END, values=row)
 
+        self.adjust_column_widths(self.characters_tree)
+
     def populate_players_table(self):
         self.c.execute("SELECT * FROM players")
         for row in self.c.fetchall():
             self.players_tree.insert('', tk.END, values=row)
+
+        self.adjust_column_widths(self.players_tree)
 
     def populate_player_characters_table(self):
         self.c.execute('''SELECT pc.player_id, p.username, pc.character_id 
@@ -130,13 +125,16 @@ class DatabaseViewer:
         for row in self.c.fetchall():
             self.player_characters_tree.insert('', tk.END, values=row)
 
+        self.adjust_column_widths(self.player_characters_tree)
+
     def populate_memories_table(self):
-        self.c.execute('''SELECT m.id, c.name, m.character_id, m.player_id, p.username, m.memory_log, m.timestamp
+        self.c.execute('''SELECT m.id, m.character_id, m.player_id, p.username, m.memory_log, m.timestamp
                           FROM memories m
-                          JOIN characters c ON m.character_id = c.id
                           JOIN players p ON m.player_id = p.id''')
         for row in self.c.fetchall():
             self.memories_tree.insert('', tk.END, values=row)
+
+        self.adjust_column_widths(self.memories_tree)
 
     def populate_disposition_table(self):
         self.c.execute('''SELECT p.username, c.name, c.level, c.positive_points, c.neutral_points, c.negative_points
@@ -145,6 +143,8 @@ class DatabaseViewer:
                           LEFT JOIN players p ON pc.player_id = p.id''')
         for row in self.c.fetchall():
             self.disposition_tree.insert('', tk.END, values=row)
+
+        self.adjust_column_widths(self.disposition_tree)
 
 
 root = tk.Tk()

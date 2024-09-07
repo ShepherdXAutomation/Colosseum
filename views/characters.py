@@ -1,6 +1,6 @@
 # Manages character creation, editing, and display.
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
-from database.db import get_character_by_id, get_memories, save_memory, get_chat_count, level_up_character
+from database.db import check_and_level_up, get_character_by_id, get_memories, save_memory, get_chat_count, level_up_character
 
 import sqlite3
 
@@ -167,14 +167,37 @@ def handle_tavern_message(data):
 
     memories = get_memories(character_id, player_id)
 
+    # Get response from the ChatGPT API
     response = send_chatgpt_api(character, chat_input, memories)
-    
 
-    chat_count = get_chat_count(character_id, player_id)
-    if chat_count % 10 == 0:
-        level_up_character(character_id)
+    # Parse the response to separate message and the flag
+    response_message, has_name_question = parse_chat_response(response)
 
-    return {'sender': character['name'], 'message': response}
+
+    # Check if character levels up
+    check_and_level_up(character_id)
+
+    # Return only the message to the chat interface
+    return {'sender': character['name'], 'message': response_message}
+
+def parse_chat_response(response):
+    """
+    Helper function to split the response and the Yes/No flag.
+    Assumes the last word of the response is 'Yes' or 'No'.
+    """
+    response = response.strip()
+
+    # Check if the last word is 'Yes' or 'No'
+    if response.endswith('Yes.') or response.endswith('No.'):
+        message = response[:-4].strip()  # Remove the last word ('Yes' or 'No')
+        has_name_question = response[-3:].strip()  # Get 'Yes' or 'No'
+    else:
+        message = response  # No 'Yes' or 'No' detected, return full response
+        has_name_question = "No"  # Default to "No" if neither is found
+        
+    print(f"message: {message}")
+
+    return message, has_name_question
 
 
 # Modify the tavern_chat route to work with both POST and GET methods

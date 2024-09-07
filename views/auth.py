@@ -1,6 +1,11 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 import sqlite3
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 # Create the Blueprint for authentication routes
 auth_bp = Blueprint('auth', __name__)
@@ -20,30 +25,37 @@ def signup():
 
         conn = None
         try:
+            logging.debug(f"Starting signup process for username: {username}")
+
             conn = get_db_connection()
             c = conn.cursor()
 
             # Check if username is already taken
+            logging.debug("Checking if the username exists.")
             c.execute('SELECT * FROM players WHERE username = ?', (username,))
             user_exists = c.fetchone()
 
             if user_exists:
+                logging.debug(f"Username {username} already exists.")
                 flash("Username already exists. Please choose another one.", "danger")
                 return redirect(url_for('auth.signup'))
 
             # Save the profile picture
             profile_picture_path = os.path.join('static', profile_picture.filename)
             profile_picture.save(profile_picture_path)
+            logging.debug(f"Profile picture saved at: {profile_picture_path}")
 
             # Insert new player into the database
             c.execute('INSERT INTO players (username, password, profile_picture) VALUES (?, ?, ?)',
                       (username, password, profile_picture_path))
             conn.commit()
+            logging.debug(f"Player {username} inserted into the database.")
 
             # Log the user in automatically
             c.execute('SELECT * FROM players WHERE username = ? AND password = ?', (username, password))
             user = c.fetchone()
             session['user_id'] = user['id']
+            logging.debug(f"User {username} logged in with user_id: {user['id']}")
 
             # Now create new instances of the initial characters for this player
             initial_characters = [
@@ -60,7 +72,11 @@ def signup():
                     "skill2": "Craft",
                     "image_path": "/static/villager.png",
                     "personality": "Hardworking and friendly.",
-                    "personality_description": "Loves beef stew. Hardworking and friendly. A person of very few words."
+                    "personality_description": "Loves beef stew. Hardworking and friendly. A person of very few words.",
+                    "neutral_points": 0,
+                    "positive_points": 0,
+                    "negative_points": 0,
+                    "name_asked": "no"
                 },
                 {
                     "name": "Friendly Dog",
@@ -75,15 +91,21 @@ def signup():
                     "skill2": "Fetch",
                     "image_path": "/static/shaggy_brown_dog.png",
                     "personality": "Loyal and friendly.",
-                    "personality_description": "Only says 'Woof'. Likes bones and wagging tail. Will comfort you and give you a lick."
+                    "personality_description": "Only says 'Woof'. Sometimes responds with actions a dog would do. These appear in asterisks. Likes bones and wagging tail. Will comfort you and give you a lick.",
+                    "neutral_points": 0,
+                    "positive_points": 0,
+                    "negative_points": 0,
+                    "name_asked": "no"
                 }
             ]
 
             for char in initial_characters:
+                logging.debug(f"Inserting character {char['name']} for player {username}")
+                
                 # Insert a new instance of each character for this player
-                c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality)
-                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                          (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["personality_description"]))
+                c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality, personality_description, neutral_points, positive_points, negative_points, name_asked )
+                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                          (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["personality_description"], char["neutral_points"], char["positive_points"], char["negative_points"], char["name_asked"]))
                 
                 # Get the newly created character's ID
                 new_character_id = c.lastrowid
@@ -91,12 +113,15 @@ def signup():
                 # Assign this new character to the player
                 c.execute('INSERT INTO player_characters (player_id, character_id) VALUES (?, ?)', 
                           (user['id'], new_character_id))
+                logging.debug(f"Character {char['name']} assigned to player {username}")
 
             conn.commit()
+            logging.debug(f"Account created successfully for {username}")
             flash("Account created successfully! Welcome!", "success")
             return redirect(url_for('index'))
 
         except Exception as e:
+            logging.error(f"An error occurred during signup: {e}")
             flash(f"An error occurred during signup: {e}", "danger")
             return redirect(url_for('auth.signup'))
         
