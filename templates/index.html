@@ -93,7 +93,8 @@
             {% if user %}
                 <button id="characterCollectionButton" onclick="window.location.href='/character_collection'">Character Collection</button>
                 <button id="colosseumButton">Colosseum</button>
-                <button id="talkToCharactersButton">Talk to Your Characters</button>
+                <button id="talkToCharactersButton" onclick="window.location.href='{{ url_for('characters.tavern_select') }}'">Tavern</button>
+
             {% endif %}
         </div>
     </div>

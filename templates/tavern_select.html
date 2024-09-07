@@ -1,0 +1,25 @@
+<!-- tavern_select.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select a Character to Chat With</title>
+</head>
+<body>
+    <h1>Select a Character</h1>
+
+    <div>
+        {% for character in characters %}
+            <div style="margin-bottom: 20px;">
+                <h2>{{ character['name'] }}</h2>
+                <img src="{{ character['image_path'] }}" alt="{{ character['name'] }}" width="150">
+                <form method="POST" action="{{ url_for('characters.tavern_chat') }}">
+                    <input type="hidden" name="character_id" value="{{ character['id'] }}">
+                    <button type="submit">Chat with {{ character['name'] }}</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('index') }}">Back to Main Menu</a>
+</body>
+</html>

@@ -4,6 +4,7 @@ import pytest
 from flask import Flask
 from app import app  # assuming your Flask app is named 'app.py'
 from views.auth import auth_bp  # importing your auth blueprint
+from io import BytesIO
 
 @pytest.fixture
 def client():

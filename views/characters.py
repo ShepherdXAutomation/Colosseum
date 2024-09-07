@@ -1,5 +1,7 @@
 # Manages character creation, editing, and display.
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
+from database.db import get_character_by_id, get_memories, save_memory, get_chat_count, level_up_character
+
 import sqlite3
 
 # Create the Blueprint for character routes
@@ -122,3 +124,54 @@ def character_collection():
     finally:
         if conn:
             conn.close()
+@characters_bp.route('/tavern_select', methods=['GET'])
+def tavern_select():
+    player_id = session.get('user_id')
+    if not player_id:
+        return redirect(url_for('auth.login'))  # Redirect to login if user is not logged in
+
+    conn = get_db_connection()
+    c = conn.cursor()
+    
+    # Fetch all characters belonging to the current player
+    c.execute('''SELECT characters.id, characters.name, characters.image_path 
+                 FROM characters 
+                 JOIN player_characters ON characters.id = player_characters.character_id 
+                 WHERE player_characters.player_id = ?''', (player_id,))
+    characters = c.fetchall()
+    conn.close()
+    
+    return render_template('tavern_select.html', characters=characters)
+
+
+@characters_bp.route('/tavern_chat', methods=['POST'])
+def tavern_chat():
+    player_id = session.get('user_id')
+    character_id = request.form['character_id']  # Character selected by the player
+    chat_input = request.form.get('input')  # Chat input from the player
+
+    if not player_id:
+        return redirect(url_for('auth.login'))  # Redirect to login if not logged in
+
+    # Fetch character and memory data
+    character = get_character_by_id(character_id)
+    memories = get_memories(character_id, player_id)
+
+    # Check if the player has already provided chat input
+    if chat_input:
+        # Send the chat input and memories to ChatGPT for processing
+        response = send_chatgpt_api(character, chat_input, memories)
+        
+        # Save the chat interaction (memory) in the database
+        save_memory(character_id, player_id, response)
+
+        # Check if the player has reached a multiple of 10 chats for leveling up
+        chat_count = get_chat_count(character_id, player_id)
+        if chat_count % 10 == 0:
+            level_up_character(character_id)
+
+        return render_template('tavern_chat.html', response=response, character=character)
+    
+    # If no chat input yet, just show the chat page without response
+    return render_template('tavern_chat.html', character=character)
+

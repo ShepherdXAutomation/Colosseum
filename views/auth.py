@@ -45,20 +45,54 @@ def signup():
             user = c.fetchone()
             session['user_id'] = user['id']
 
-            # Assign default characters (Villager and Friendly Dog)
-            c.execute('SELECT id FROM characters WHERE name = "Villager"')
-            villager_id = c.fetchone()['id']
-            c.execute('INSERT INTO player_characters (player_id, character_id) VALUES (?, ?)', 
-                      (user['id'], villager_id))
+            # Now create new instances of the initial characters for this player
+            initial_characters = [
+                {
+                    "name": "Villager",
+                    "hp": 50,
+                    "attack": 5,
+                    "defense": 5,
+                    "speed": 5,
+                    "luck": 5,
+                    "magic": 0,
+                    "level": 1,
+                    "skill1": "Harvest",
+                    "skill2": "Craft",
+                    "image_path": "/static/villager.png",
+                    "personality": "Hardworking and friendly."
+                },
+                {
+                    "name": "Friendly Dog",
+                    "hp": 30,
+                    "attack": 3,
+                    "defense": 2,
+                    "speed": 6,
+                    "luck": 8,
+                    "magic": 0,
+                    "level": 1,
+                    "skill1": "Bark",
+                    "skill2": "Fetch",
+                    "image_path": "/static/shaggy_brown_dog.png",
+                    "personality": "Loyal and friendly."
+                }
+            ]
 
-            c.execute('SELECT id FROM characters WHERE name = "Friendly Dog"')
-            dog_id = c.fetchone()['id']
-            c.execute('INSERT INTO player_characters (player_id, character_id) VALUES (?, ?)', 
-                      (user['id'], dog_id))
+            for char in initial_characters:
+                # Insert a new instance of each character for this player
+                c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality)
+                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                          (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"]))
+                
+                # Get the newly created character's ID
+                new_character_id = c.lastrowid
+
+                # Assign this new character to the player
+                c.execute('INSERT INTO player_characters (player_id, character_id) VALUES (?, ?)', 
+                          (user['id'], new_character_id))
 
             conn.commit()
             flash("Account created successfully! Welcome!", "success")
-            return redirect(url_for('main_menu'))
+            return redirect(url_for('index'))
 
         except Exception as e:
             flash(f"An error occurred during signup: {e}", "danger")
@@ -69,6 +103,7 @@ def signup():
                 conn.close()
 
     return render_template('signup.html')
+
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
@@ -86,7 +121,7 @@ def login():
             if user:
                 session['user_id'] = user['id']
                 flash("Logged in successfully!", "success")
-                return redirect(url_for('main_menu'))
+                return redirect(url_for('index'))
             else:
                 flash("Invalid credentials. Please try again.", "danger")
                 return redirect(url_for('auth.login'))
@@ -136,4 +171,4 @@ def change_profile_picture():
         if conn:
             conn.close()
 
-    return redirect(url_for('main_menu'))
+    return redirect(url_for('index'))

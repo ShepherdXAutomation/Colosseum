@@ -1,0 +1,26 @@
+<!-- tavern_chat.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tavern Chat</title>
+</head>
+<body>
+    <h1>Chat with {{ character['name'] }}</h1>
+
+    <!-- Display the AI response, if there is one -->
+    {% if response %}
+        <div>
+            <p>{{ response }}</p>
+        </div>
+    {% endif %}
+
+    <!-- Chat form -->
+    <form method="POST" action="{{ url_for('characters.tavern_chat') }}">
+        <input type="hidden" name="character_id" value="{{ character['id'] }}">
+        <textarea name="input" placeholder="Type your message here"></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <a href="{{ url_for('characters.tavern_select') }}">Back to Character Selection</a>
+</body>
+</html>
