@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_socketio import SocketIO, emit
 from views.auth import auth_bp
 from views.characters import characters_bp, handle_tavern_message
-from database.db import init_db, add_columns_if_not_exist, insert_initial_characters, get_db_connection
+from database.db import init_db, add_columns_if_not_exist, get_db_connection
 import os
 
 app = Flask(__name__)
@@ -28,7 +28,7 @@ def initialize_app():
     with app.app_context():
         init_db()
         add_columns_if_not_exist()
-        insert_initial_characters()
+       # insert_initial_characters()
 
 @app.route('/')
 def index():

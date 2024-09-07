@@ -20,20 +20,25 @@ def init_db():
 
     # Create characters table if not exists
     c.execute('''CREATE TABLE IF NOT EXISTS characters (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT NOT NULL,
-                    hp INTEGER,
-                    attack INTEGER,
-                    defense INTEGER,
-                    speed INTEGER,
-                    luck INTEGER,
-                    magic INTEGER,
-                    level INTEGER,
-                    skill1 TEXT,
-                    skill2 TEXT,
-                    image_path TEXT,
-                    personality TEXT
-                )''')
+                   id INTEGER PRIMARY KEY AUTOINCREMENT,
+                   name TEXT NOT NULL,
+                   hp INTEGER,
+                   attack INTEGER,
+                   defense INTEGER,
+                   speed INTEGER,
+                   luck INTEGER,
+                   magic INTEGER,
+                   level INTEGER,
+                   skill1 TEXT,
+                   skill2 TEXT,
+                   image_path TEXT,
+                   personality TEXT,
+                   available_points INTEGER DEFAULT 0,
+                   personality_description TEXT,
+                   neutral_points INTEGER DEFAULT 0,
+                   positive_points INTEGER DEFAULT 0,
+                   negative_points INTEGER DEFAULT 0
+               )''')
 
     # Create player_characters table if not exists
     c.execute('''CREATE TABLE IF NOT EXISTS player_characters (
@@ -122,15 +127,21 @@ def get_character_by_id(character_id):
     return character
 
 
+def set_personality_description(character_id, description):
+    conn = get_db_connection()
+    c = conn.cursor()
+    c.execute('UPDATE characters SET personality_description = ? WHERE id = ?', (description, character_id))
+    conn.commit()
+    conn.close()
 
 
-
-
-
-
-
-
-
+def get_personality_description(character_id):
+    conn = get_db_connection()
+    c = conn.cursor()
+    c.execute('SELECT personality_description FROM characters WHERE id = ?', (character_id,))
+    description = c.fetchone()
+    conn.close()
+    return description[0] if description else None
 
 
 
@@ -161,7 +172,11 @@ def add_columns_if_not_exist():
         ('skill1', 'TEXT'),
         ('skill2', 'TEXT'),
         ('personality', 'TEXT'),
-        ('available_points', 'INTEGER DEFAULT 0')
+        ('available_points', 'INTEGER DEFAULT 0'),
+        ('personality_description', 'TEXT'),
+        ('neutral_points', 'INTEGER DEFAULT 0'),
+        ('positive_points', 'INTEGER DEFAULT 0'),
+        ('negative_points', 'INTEGER DEFAULT 0'),
     ]
 
     # Check if any column is missing
@@ -193,57 +208,59 @@ def add_columns_if_not_exist():
 
 
 # Insert initial characters into the database if they don't exist
-def insert_initial_characters():
-    characters = [
-        {
-            "name": "Villager",
-            "hp": 50,
-            "attack": 5,
-            "defense": 5,
-            "speed": 5,
-            "luck": 5,
-            "magic": 0,
-            "level": 1,
-            "skill1": "Harvest",
-            "skill2": "Craft",
-            "image_path": "/static/villager.png",
-            "personality": "Hardworking and friendly."
-        },
-        {
-            "name": "Friendly Dog",
-            "hp": 60,
-            "attack": 7,
-            "defense": 4,
-            "speed": 8,
-            "luck": 10,
-            "magic": 0,
-            "level": 1,
-            "skill1": "Fetch",
-            "skill2": "Bark",
-            "image_path": "/static/shaggy_brown_dog.png",
-            "personality": "Loyal and playful."
-        },
-        # Add more characters here if needed...
-    ]
+# def insert_initial_characters():
+#     characters = [
+#         {
+#             "name": "Villager",
+#             "hp": 50,
+#             "attack": 5,
+#             "defense": 5,
+#             "speed": 5,
+#             "luck": 5,
+#             "magic": 0,
+#             "level": 1,
+#             "skill1": "Harvest",
+#             "skill2": "Craft",
+#             "image_path": "/static/villager.png",
+#             "personality": "Hardworking and friendly.",
+#             "personality_description": "Loves beef stew. Hardworking and friendly. A person of very few words."
+#         },
+#         {
+#             "name": "Friendly Dog",
+#             "hp": 60,
+#             "attack": 7,
+#             "defense": 4,
+#             "speed": 8,
+#             "luck": 10,
+#             "magic": 0,
+#             "level": 1,
+#             "skill1": "Fetch",
+#             "skill2": "Bark",
+#             "image_path": "/static/shaggy_brown_dog.png",
+#             "personality": "Loyal and playful.",
+#             "personality_description": "Only says 'Woof'. Likes bones and wagging tail. Will comfort you and give you a lick."
+#         },
+#         # Add more characters here if needed...
+#     ]
 
-    conn = get_db_connection()
-    c = conn.cursor()
+#     conn = get_db_connection()
+#     c = conn.cursor()
 
-    for char in characters:
-        # Check if the character already exists by name
-        c.execute('SELECT * FROM characters WHERE name = ?', (char["name"],))
-        result = c.fetchone()
+#     for char in characters:
+#         # Check if the character already exists by name
+#         c.execute('SELECT * FROM characters WHERE name = ?', (char["name"],))
+#         result = c.fetchone()
 
-        # If the character doesn't exist, insert it
-        if result is None:
-            c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality)
-                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                      (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"]))
+#         # If the character doesn't exist, insert it
+#         if result is None:
+#             c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality, personality_description)
+#                          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+#                       (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["personality_description"], char["neutral_points"], char["positive_points"], char["negative_points"]))
 
-    conn.commit()
-    conn.close()
+#     conn.commit()
+#     conn.close()
 
 # Initialize the database and insert initial characters
 init_db()
 add_columns_if_not_exist()
-insert_initial_characters()
+# insert_initial_characters()

@@ -169,7 +169,6 @@ def handle_tavern_message(data):
 
     response = send_chatgpt_api(character, chat_input, memories)
     
-    save_memory(character_id, player_id, response)
 
     chat_count = get_chat_count(character_id, player_id)
     if chat_count % 10 == 0:

@@ -31,8 +31,8 @@ class DatabaseViewer:
 
         self.tab_control.pack(expand=1, fill='both')
 
-        # Characters table with player username column
-        self.characters_tree = ttk.Treeview(self.characters_tab, columns=('ID', 'Name', 'HP', 'Attack', 'Defense', 'Speed', 'Luck', 'Magic', 'Level', 'Skill1', 'Skill2', 'Image Path', 'Personality', 'Available Points', 'Username'), show='headings')
+        # Characters table with player username and personality_description columns
+        self.characters_tree = ttk.Treeview(self.characters_tab, columns=('ID', 'Name', 'HP', 'Attack', 'Defense', 'Speed', 'Luck', 'Magic', 'Level', 'Skill1', 'Skill2', 'Image Path', 'Personality', 'Available Points', 'Personality Description', 'Positive Points', 'Neutral Points', 'Negative Points', 'Username'), show='headings')
         for col in self.characters_tree['columns']:
             self.characters_tree.heading(col, text=col)
         self.characters_tree.pack(expand=True, fill='both')
@@ -56,9 +56,10 @@ class DatabaseViewer:
         self.memories_tree.pack(expand=True, fill='both')
 
     def populate_characters_table(self):
-        # Join characters with player_characters and players to get the username
+        # Join characters with player_characters and players to get the username and personality_description
         self.c.execute('''SELECT c.id, c.name, c.hp, c.attack, c.defense, c.speed, c.luck, c.magic, 
-                                 c.level, c.skill1, c.skill2, c.image_path, c.personality, c.available_points, p.username
+                                 c.level, c.skill1, c.skill2, c.image_path, c.personality, c.available_points, 
+                                 c.personality_description, c.positive_points, c.neutral_points, c.negative_points, p.username
                           FROM characters c
                           LEFT JOIN player_characters pc ON c.id = pc.character_id
                           LEFT JOIN players p ON pc.player_id = p.id''')

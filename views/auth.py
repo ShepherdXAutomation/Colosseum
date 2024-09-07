@@ -59,7 +59,8 @@ def signup():
                     "skill1": "Harvest",
                     "skill2": "Craft",
                     "image_path": "/static/villager.png",
-                    "personality": "Hardworking and friendly."
+                    "personality": "Hardworking and friendly.",
+                    "personality_description": "Loves beef stew. Hardworking and friendly. A person of very few words."
                 },
                 {
                     "name": "Friendly Dog",
@@ -73,15 +74,16 @@ def signup():
                     "skill1": "Bark",
                     "skill2": "Fetch",
                     "image_path": "/static/shaggy_brown_dog.png",
-                    "personality": "Loyal and friendly."
+                    "personality": "Loyal and friendly.",
+                    "personality_description": "Only says 'Woof'. Likes bones and wagging tail. Will comfort you and give you a lick."
                 }
             ]
 
             for char in initial_characters:
                 # Insert a new instance of each character for this player
                 c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality)
-                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                          (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"]))
+                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                          (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["personality_description"]))
                 
                 # Get the newly created character's ID
                 new_character_id = c.lastrowid
