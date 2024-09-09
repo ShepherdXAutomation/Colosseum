@@ -72,7 +72,7 @@ def signup():
                     "skill2": "Craft",
                     "image_path": "/static/villager.png",
                     "personality": "Hardworking and friendly.",
-                    "personality_description": "Loves beef stew. Hardworking and friendly. A person of very few words.",
+                    "personality_description": "Hardworking and friendly. A person of very few words.",
                     "neutral_points": 0,
                     "positive_points": 0,
                     "negative_points": 0,

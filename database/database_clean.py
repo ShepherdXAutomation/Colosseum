@@ -1,5 +1,7 @@
 import sqlite3
 
+from db import alter_table_add_column
+
 def clean_up_duplicates():
     conn = sqlite3.connect('game.db')
     c = conn.cursor()
@@ -133,3 +135,5 @@ def insert_initial_characters():
     conn.close()
 
 clear_tables()
+
+# Call the function

@@ -2,10 +2,12 @@ import os
 from flask import session
 from openai import OpenAI
 from dotenv import load_dotenv
-from database.db import get_character_by_id, get_db_connection, save_memory, update_disposition_points, update_name_asked
+
 import requests
 
-import logging
+from database.database_helper import get_character_by_id, summarize_memories
+from database.db import get_db_connection, update_disposition_points, update_name_asked
+
 
 
 # Set logging level to suppress DEBUG messages
@@ -15,15 +17,11 @@ load_dotenv()
 
 randommer_api_key = os.getenv('RANDOMMER_API_KEY')
 
+
 # Try to get the API key from different sources
 api_key = os.getenv('OPENAI_API_KEY') or os.environ.get('OPENAI_API_KEY')
-
-
-
 if not api_key:
     raise ValueError("No OpenAI API key found. Please set the OPENAI_API_KEY environment variable.")
-
-
 try:
     client = OpenAI(api_key=api_key)
 except Exception as e:
@@ -53,9 +51,9 @@ def send_chatgpt_api(character, chat_input, memories):
 
     response_tone = "normal"
     if positive_points > neutral_points and positive_points > negative_points:
-        response_tone = "You trust this person. Respond positively to them."
+        response_tone = "Respond positively to them."
     elif negative_points > neutral_points and negative_points > positive_points:
-        response_tone = "You do not like this person. Respond terse with them."
+        response_tone = "You do not like this person. Respond rudely to them. As rude as you possibly can."
     else:
         response_tone = "You do not feel a particular way towards this person. Respond indifferently."
 
@@ -93,6 +91,9 @@ def send_chatgpt_api(character, chat_input, memories):
             f"You are {character['name']}, a character with the personality: {character['personality_description']}. {response_tone} "
             f"These encounters are happening in a medieval tavern. The name of the tavern is the Creaky Wheel. "
             f"All characters speak with a medieval accent and are not overly polite. They are living their daily lives and may not be helpful. "
+            f"Try to talk about stew sparingly, if at all."
+            f"Try to randomize the words you use. Don't use the word 'Aye'"
+            f"Don't ask questions."
             f"Use the following memory context to guide your response: {memory_context}"
         )
 
@@ -106,8 +107,8 @@ def send_chatgpt_api(character, chat_input, memories):
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": chat_input}
             ],
-            max_tokens=500,
-            temperature=0.8
+            max_tokens=1000,
+            temperature=0.65
         )
 
         # Extracting the text of the assistant's reply
@@ -130,8 +131,6 @@ def send_chatgpt_api(character, chat_input, memories):
         print(f"An error occurred while calling the OpenAI API: {e}")
         return None
 
-
-
 def evaluate_memory_importance(user_input, assistant_reply, memory_context):
     """
     Sends the user input, assistant reply, and memory context to ChatGPT for evaluation.
@@ -148,8 +147,8 @@ def evaluate_memory_importance(user_input, assistant_reply, memory_context):
         f"GPT Response: {assistant_reply}\n\n"
         f"Based on the context of this interaction, rate the importance of this memory for character development on a scale of 1 to 10. All names are considered important."
         f"Likes and dislikes are important."
-        f"Also, determine the tone of the interaction and return one of these three options: neutral, positive, or negative.\n"
-        f"You should respond with a single number indicating the importance level, followed by a comma, then the tone as a single word (neutral, positive, or negative)."
+        f"Also, determine the tone of the user input and return one of these three options: neutral, positive, or negative.\n"
+        f"You should respond with a single number indicating the importance level, followed by a comma, then the tone of the user input as a single word (neutral, positive, or negative)."
         
     )
 
@@ -183,7 +182,6 @@ def evaluate_memory_importance(user_input, assistant_reply, memory_context):
         print(f"An error occurred while evaluating memory importance: {e}")
         return 1, "neutral"  # Default to trivial and neutral if something goes wrong
 
-
 def parse_response(response):
     # Split the response into individual sentences
     sentences = response.strip().split(". ")
@@ -195,7 +193,6 @@ def parse_response(response):
     message = ". ".join(sentences[:-1]).strip()
 
     return message, last_sentence
-
 
 def get_random_name():
     """
@@ -243,6 +240,7 @@ def update_character_name(character_id, new_name):
         conn.close()
 
 def handle_name_request(character_id):
+    
     """
     Handles the logic when the player asks for the character's name.
     Calls the Randommer API and updates the database with the new name.
@@ -258,3 +256,33 @@ def handle_name_request(character_id):
     else:
         print("No random name was generated. Keeping the original name.")
         return None
+        
+def save_memory(character_id, player_id, memory_log):
+    """
+    Save memory log to the database with the additional functionality of checking if the log is empty,
+    and then summarize memories after saving.
+
+    :param character_id: The ID of the character.
+    :param player_id: The ID of the player.
+    :param memory_log: The log or content of the memory.
+    """
+    conn = get_db_connection()
+    c = conn.cursor()
+
+    # Check if the memory log is None or empty before saving
+    if memory_log is None or memory_log == '':
+        print(f"Warning: memory_log is empty for character_id {character_id} and player_id {player_id}.")
+        memory_log = "No memory log provided."
+
+    # Save memory to the database with summarized set to 0 and current timestamp
+    c.execute('''
+        INSERT INTO memories (character_id, player_id, memory_log, summarized, timestamp) 
+        VALUES (?, ?, ?, 0, CURRENT_TIMESTAMP)
+    ''', (character_id, player_id, memory_log))
+    
+    conn.commit()
+
+    # Call the summarization process after memory is saved
+    summarize_memories(character_id)
+
+    conn.close()

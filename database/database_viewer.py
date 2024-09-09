@@ -53,8 +53,8 @@ class DatabaseViewer:
             self.player_characters_tree.heading(col, text=col)
         self.player_characters_tree.pack(expand=True, fill='both')
 
-        # Memories table (with Character Name)
-        self.memories_tree = ttk.Treeview(self.memories_tab, columns=('ID', 'Character Name', 'Character ID', 'Player ID', 'Username', 'Memory Log', 'Timestamp'), show='headings')
+        # Memories table (added 'Summarized' column)
+        self.memories_tree = ttk.Treeview(self.memories_tab, columns=('ID', 'Character Name', 'Character ID', 'Player ID', 'Username', 'Memory Log', 'Timestamp', 'Summarized'), show='headings')
         for col in self.memories_tree['columns']:
             self.memories_tree.heading(col, text=col)
         self.memories_tree.pack(expand=True, fill='both')
@@ -131,7 +131,7 @@ class DatabaseViewer:
             self.player_characters_tree.insert('', tk.END, values=row)
 
     def populate_memories_table(self):
-        self.c.execute('''SELECT m.id, c.name, m.character_id, m.player_id, p.username, m.memory_log, m.timestamp
+        self.c.execute('''SELECT m.id, c.name, m.character_id, m.player_id, p.username, m.memory_log, m.timestamp, m.summarized
                           FROM memories m
                           JOIN characters c ON m.character_id = c.id
                           JOIN players p ON m.player_id = p.id''')

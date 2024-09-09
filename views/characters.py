@@ -1,9 +1,11 @@
 # Manages character creation, editing, and display.
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
-from database.db import check_and_level_up, get_character_by_id, get_memories, save_memory, get_chat_count, level_up_character
+
 
 import sqlite3
 
+from database.database_helper import get_character_by_id, get_memories
+from database.db import check_and_level_up
 from utils.api import send_chatgpt_api
 
 # Create the Blueprint for character routes

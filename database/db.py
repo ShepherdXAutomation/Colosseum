@@ -1,5 +1,6 @@
 import sqlite3
 
+
 # Helper function to get database connection
 def get_db_connection():
     conn = sqlite3.connect('game.db')
@@ -56,6 +57,7 @@ def init_db():
                     player_id INTEGER,
                     memory_log TEXT,
                     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    summarized INTEGER DEFAULT 0,
                     FOREIGN KEY(character_id) REFERENCES characters(id),
                     FOREIGN KEY(player_id) REFERENCES players(id)
                 )''')
@@ -63,85 +65,6 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Save a new memory in the database
-# Save memory in the format for future recall
-def save_memory(character_id, player_id, memory_log):
-    conn = get_db_connection()
-    c = conn.cursor()
-
-    # Check if the memory log is None or empty before saving
-    if memory_log is None or memory_log == '':
-        print(f"Warning: memory_log is empty for character_id {character_id} and player_id {player_id}.")
-        memory_log = "No memory log provided."
-
-    # Assuming memory_log is a simple string (you might need to adjust based on your use case)
-    formatted_memory = memory_log  # If it's already a string, no need to format
-
-    # Save memory to the database
-    c.execute('INSERT INTO memories (character_id, player_id, memory_log) VALUES (?, ?, ?)',
-              (character_id, player_id, formatted_memory))
-    conn.commit()
-    conn.close()
-
-
-
-# Fetch all memories for a character
-def get_memories(character_id, player_id):
-    conn = get_db_connection()
-    c = conn.cursor()
-    c.execute('SELECT memory_log FROM memories WHERE character_id = ? AND player_id = ?', (character_id, player_id))
-    # Fetch as list of dictionaries or just memory logs
-    memories = [row['memory_log'] for row in c.fetchall()]
-    conn.close()
-    return memories
-
-
-# Get the count of interactions between player and character
-def get_chat_count(character_id, player_id):
-    conn = get_db_connection()
-    c = conn.cursor()
-    c.execute('SELECT COUNT(*) FROM memories WHERE character_id = ? AND player_id = ?', (character_id, player_id))
-    count = c.fetchone()[0]
-    conn.close()
-    return count
-
-# Level up the character after certain interactions
-def level_up_character(character_id):
-    conn = get_db_connection()
-    c = conn.cursor()
-    # Increment character's level and award available stat points
-    c.execute('UPDATE characters SET level = level + 1, available_points = available_points + 1 WHERE id = ?', (character_id,))
-    conn.commit()
-    conn.close()
-
-
-
-def get_character_by_id(character_id):
-    conn = get_db_connection()
-    c = conn.cursor()
-    
-    c.execute('SELECT * FROM characters WHERE id = ?', (character_id,))
-    character = c.fetchone()
-    
-    conn.close()
-    return character
-
-
-def set_personality_description(character_id, description):
-    conn = get_db_connection()
-    c = conn.cursor()
-    c.execute('UPDATE characters SET personality_description = ? WHERE id = ?', (description, character_id))
-    conn.commit()
-    conn.close()
-
-
-def get_personality_description(character_id):
-    conn = get_db_connection()
-    c = conn.cursor()
-    c.execute('SELECT personality_description FROM characters WHERE id = ?', (character_id,))
-    description = c.fetchone()
-    conn.close()
-    return description[0] if description else None
 
 
 
@@ -224,7 +147,7 @@ def insert_initial_characters():
             "skill2": "Craft",
             "image_path": "/static/villager.png",
             "personality": "Hardworking and friendly.",
-            "personality_description": "Loves beef stew. Hardworking and friendly. A person of very few words.",
+            "personality_description": "Hardworking and friendly. A person of very few words.",
             "neutral_points": 0,
             "positive_points": 0,
             "negative_points": 0,
@@ -375,3 +298,24 @@ def update_name_asked(character_id, name_asked='yes'):
         # Ensure the connection is closed
         if conn:
             conn.close()
+
+def alter_table_add_column():
+    conn = sqlite3.connect('game.db')  # Connect to your database
+    c = conn.cursor()
+
+    try:
+        # Execute the ALTER TABLE statement to add a new column
+        c.execute("ALTER TABLE memories ADD COLUMN summarized INTEGER DEFAULT 0")
+        
+        # Commit the changes
+        conn.commit()
+        print("Column 'summarized' added successfully.")
+        
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    
+    finally:
+        # Close the connection
+        conn.close()
+
+
