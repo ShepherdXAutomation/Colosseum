@@ -39,9 +39,10 @@ def send_chatgpt_api(character, chat_input, memories):
     """
     print("----------------------------------------------------------------------new chat------------------------------------------------------------------")
     player_id = session.get('user_id')  
+    player_name = get_player_name(player_id)
     if not player_id:
         raise ValueError("No player_id found in session. Please ensure the player is logged in.")
-    
+
     # Disposition and tone setting
     positive_points = character['positive_points']
     neutral_points = character['neutral_points'] / 3
@@ -58,7 +59,9 @@ def send_chatgpt_api(character, chat_input, memories):
         response_tone = "You do not feel a particular way towards this person. Respond indifferently."
 
     # Combine memories into a single context string
-    memory_context = "\n".join([f"Memory {i+1}: {memory}" for i, memory in enumerate(memories)])
+    # When adding memories, emphasize the player’s name
+    memory_context = "\n".join([f"Memory {i+1}: {memory}. This memory is with the player named {player_name}." for i, memory in enumerate(memories)])
+
 
     # First, check if the user is asking for the name
     system_message_check = (
@@ -91,9 +94,11 @@ def send_chatgpt_api(character, chat_input, memories):
             f"You are {character['name']}, a character with the personality: {character['personality_description']}. {response_tone} "
             f"These encounters are happening in a medieval tavern. The name of the tavern is the Creaky Wheel. "
             f"All characters speak with a medieval accent and are not overly polite. They are living their daily lives and may not be helpful. "
-            f"Try to talk about stew sparingly, if at all."
+            f"You have joined the player's band to take on the Colosseum."
             f"Try to randomize the words you use. Don't use the word 'Aye'"
+            f"Avoid repeating the same sentences or phrases frequently. Vary your responses."
             f"Don't ask questions."
+            f"Tell stories about all sorts of adventures."
             f"Use the following memory context to guide your response: {memory_context}"
         )
 
@@ -102,13 +107,14 @@ def send_chatgpt_api(character, chat_input, memories):
 
         # Call to OpenAI's ChatCompletion API for the actual response
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": chat_input}
             ],
             max_tokens=1000,
-            temperature=0.65
+            temperature=0.67,
+            top_p=1.0
         )
 
         # Extracting the text of the assistant's reply
@@ -286,3 +292,16 @@ def save_memory(character_id, player_id, memory_log):
     summarize_memories(character_id)
 
     conn.close()
+
+
+
+def get_player_name(player_id):
+    conn = get_db_connection()
+    c = conn.cursor()
+
+    # Fetch the player's name from the database
+    c.execute('SELECT username FROM players WHERE id = ?', (player_id,))
+    player_name = c.fetchone()
+
+    conn.close()
+    return player_name['username'] if player_name else None

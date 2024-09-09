@@ -168,7 +168,10 @@ def handle_tavern_message(data):
         return {'error': 'Character not found'}
 
     memories = get_memories(character_id, player_id)
-
+      # Special command for recalling memories
+    if chat_input.lower() == "what do you remember?":
+        memory_context = "\n".join([f"Memory {i+1}: {memory}" for i, memory in enumerate(memories)])
+        return {'sender': character['name'], 'message': f"I remember the following interactions:\n\n{memory_context}"}
     # Get response from the ChatGPT API
     response = send_chatgpt_api(character, chat_input, memories)
 
