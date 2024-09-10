@@ -1,6 +1,7 @@
 import sqlite3
 import tkinter as tk
 from tkinter import ttk
+import subprocess
 
 class DatabaseViewer:
     def __init__(self, root):
@@ -13,7 +14,8 @@ class DatabaseViewer:
 
         self.create_widgets()
         self.populate_all_tables()
-
+    def open_sql_executor(self):
+        subprocess.Popen(['python', 'database\\sql_execute.py'])
     def create_widgets(self):
         self.tab_control = ttk.Notebook(self.root)
         
@@ -32,11 +34,15 @@ class DatabaseViewer:
         self.tab_control.add(self.weapons_tab, text='Weapons')  # Add weapons tab
 
         self.tab_control.pack(expand=1, fill='both')
+       
+
 
         # Create an Update button
         update_button = tk.Button(self.root, text="Update", command=self.update_tables)
         update_button.pack()
-
+         # Add button to open the SQL Executor App
+        sql_executor_button = tk.Button(self.root, text="Open SQL Executor", command=self.open_sql_executor)
+        sql_executor_button.pack(pady=5)
         # Characters table (added 'Name Asked' column)
         self.characters_tree = ttk.Treeview(self.characters_tab, columns=('ID', 'Name', 'HP', 'Attack', 'Defense', 'Speed', 'Luck', 'Magic', 'Level', 'Skill1', 'Skill2', 'Image Path', 'Personality', 'Available Points', 'Personality Description', 'Positive Points', 'Neutral Points', 'Negative Points', 'Username', 'Name Asked'), show='headings')
         for col in self.characters_tree['columns']:
