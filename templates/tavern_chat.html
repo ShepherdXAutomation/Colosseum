@@ -49,6 +49,34 @@
         a:hover {
         text-decoration: underline; /* Optional: Adds underline when hovered */
         }
+        #inventory-panel {
+            width: 300px;
+            background-color: #3c2d3a;
+            color: white;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 10px;
+        }
+
+        .inventory-slot {
+            width: 60px;
+            height: 60px;
+            background-color: #4b2e39;
+            border: 2px solid #2c1f26;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inventory-slot img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .empty-slot {
+            background-color: #2c1f26;
+        }
     </style>
 </head>
 <body>
@@ -103,5 +131,17 @@
         // If there's an initial response, scroll to the bottom of the chat container
         chatContainer.scrollTop = chatContainer.scrollHeight;
     </script>
+  <div id="inventory-panel">
+    <!-- Inventory items will be rendered here -->
+    <div class="inventory-slot">
+        <img src="/static/images/weapons/swords/blazing_falchion.png" alt="Iron Sword">
+    </div>
+    <div class="inventory-slot empty-slot"></div> <!-- Empty slot -->
+    <div class="inventory-slot">
+        <img src="/static/images/weapons/swords/bronze_scimitar.png" alt="Dagger">
+    </div>
+    <div class="inventory-slot empty-slot"></div> <!-- Empty slot -->
+    <!-- Add more slots dynamically -->
+</div>
 </body>
 </html>
