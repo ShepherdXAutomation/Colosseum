@@ -38,8 +38,21 @@ def init_db():
                    personality_description TEXT,
                    neutral_points INTEGER DEFAULT 0,
                    positive_points INTEGER DEFAULT 0,
-                   negative_points INTEGER DEFAULT 0
+                   negative_points INTEGER DEFAULT 0,
+                   weapon_id INTEGER
+
                )''')
+    
+    c.execute(''' CREATE TABLE IF NOT EXISTS weapons (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT NOT NULL DEFAULT 'none',
+                    type TEXT,  -- e.g., sword, axe, staff, dagger
+                    attack_bonus INTEGER DEFAULT 0,
+                    defense_bonus INTEGER DEFAULT 0,
+                    magic_bonus INTEGER DEFAULT 0,
+                    speed_bonus INTEGER DEFAULT 0,
+                    image_path TEXT
+                )''')
 
     # Create player_characters table if not exists
     c.execute('''CREATE TABLE IF NOT EXISTS player_characters (
@@ -100,7 +113,8 @@ def add_columns_if_not_exist():
         ('neutral_points', 'INTEGER DEFAULT 0'),
         ('positive_points', 'INTEGER DEFAULT 0'),
         ('negative_points', 'INTEGER DEFAULT 0'),
-        ('name_asked', 'TEXT DEFAULT no')
+        ('name_asked', 'TEXT DEFAULT no'),
+        ('weapon_id', 'INTEGER')
     ]
 
     # Check if any column is missing
@@ -151,7 +165,7 @@ def insert_initial_characters():
             "neutral_points": 0,
             "positive_points": 0,
             "negative_points": 0,
-            "name_asked": "no"
+            "name_asked": "no",
         },
         {
             "name": "Friendly Dog",
@@ -318,4 +332,50 @@ def alter_table_add_column():
         # Close the connection
         conn.close()
 
+
+import sqlite3
+
+def execute_sql_command(command, params=(), fetch=False):
+    """
+    Execute an SQL command.
+    
+    :param command: The SQL command to execute (string).
+    :param params: Tuple of parameters for the SQL query (optional).
+    :param fetch: Boolean, if True fetches and returns data (for SELECT queries).
+    :return: Fetched data if fetch is True, otherwise None.
+    """
+    conn = None
+    try:
+        # Connect to the database
+        conn = sqlite3.connect('game.db')
+        c = conn.cursor()
+
+        # Execute the SQL command with optional parameters
+        if params:
+            c.execute(command, params)
+        else:
+            c.execute(command)
+
+        # If it's a SELECT query, fetch and return the data
+        if fetch:
+            result = c.fetchall()
+            return result
+        
+        # Commit the transaction if it's an INSERT, UPDATE, or DELETE
+        conn.commit()
+
+    except sqlite3.Error as e:
+        print(f"An error occurred: {e}")
+    finally:
+        if conn:
+            conn.close()
+
+insert_weapons_command = """
+INSERT INTO weapons (name, type, attack_bonus, defense_bonus, magic_bonus, speed_bonus, image_path)
+VALUES 
+('Iron Sword', 'Sword', 10, 2, 0, 3, '/static/images/weapons/iron_sword.png'),
+('Wood Axe', 'Axe', 12, 3, 0, 2, '/static/images/weapons/steel_axe.png'),
+('Traveler''s Staff', 'Staff', 5, 1, 10, 1, '/static/images/weapons/magic_staff.png'),
+('Dagger', 'Dagger', 7, 1, 0, 5, '/static/images/weapons/dagger.png');
+"""
 

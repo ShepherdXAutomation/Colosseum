@@ -25,10 +25,10 @@ def initialize_app():
     """
     Initialize the database and insert data. This should only run once when the app starts.
     """
-    with app.app_context():
-        init_db()
-        add_columns_if_not_exist()
-        insert_initial_characters()
+   # with app.app_context():
+    #    init_db()
+        #add_columns_if_not_exist()
+        #insert_initial_characters()
 
 @app.route('/')
 def index():

@@ -22,12 +22,14 @@ class DatabaseViewer:
         self.player_characters_tab = ttk.Frame(self.tab_control)
         self.memories_tab = ttk.Frame(self.tab_control)
         self.disposition_tab = ttk.Frame(self.tab_control)
+        self.weapons_tab = ttk.Frame(self.tab_control)  # New weapons tab
 
         self.tab_control.add(self.characters_tab, text='Characters')
         self.tab_control.add(self.players_tab, text='Players')
         self.tab_control.add(self.player_characters_tab, text='Player-Characters')
         self.tab_control.add(self.memories_tab, text='Memories')
         self.tab_control.add(self.disposition_tab, text='Disposition')
+        self.tab_control.add(self.weapons_tab, text='Weapons')  # Add weapons tab
 
         self.tab_control.pack(expand=1, fill='both')
 
@@ -53,8 +55,8 @@ class DatabaseViewer:
             self.player_characters_tree.heading(col, text=col)
         self.player_characters_tree.pack(expand=True, fill='both')
 
-        # Memories table (added 'Summarized' column)
-        self.memories_tree = ttk.Treeview(self.memories_tab, columns=('ID', 'Character Name', 'Character ID', 'Player ID', 'Username', 'Memory Log', 'Timestamp', 'Summarized'), show='headings')
+        # Memories table (with Character Name)
+        self.memories_tree = ttk.Treeview(self.memories_tab, columns=('ID', 'Character Name', 'Character ID', 'Player ID', 'Username', 'Memory Log', 'Timestamp'), show='headings')
         for col in self.memories_tree['columns']:
             self.memories_tree.heading(col, text=col)
         self.memories_tree.pack(expand=True, fill='both')
@@ -64,6 +66,12 @@ class DatabaseViewer:
         for col in self.disposition_tree['columns']:
             self.disposition_tree.heading(col, text=col)
         self.disposition_tree.pack(expand=True, fill='both')
+
+        # Weapons table (with Character Name) - NEW SECTION
+        self.weapons_tree = ttk.Treeview(self.weapons_tab, columns=('Weapon ID', 'Weapon Name', 'Type', 'Attack Bonus', 'Defense Bonus', 'Magic Bonus', 'Speed Bonus', 'Owner Name'), show='headings')
+        for col in self.weapons_tree['columns']:
+            self.weapons_tree.heading(col, text=col)
+        self.weapons_tree.pack(expand=True, fill='both')
 
         # Add scrollbars after creating the treeviews
         self.add_scrollbars()
@@ -90,16 +98,21 @@ class DatabaseViewer:
         self.scrollbar_x_disp.pack(side=tk.BOTTOM, fill=tk.X)
         self.disposition_tree.configure(xscrollcommand=self.scrollbar_x_disp.set)
 
+        self.scrollbar_x_weapons = ttk.Scrollbar(self.weapons_tab, orient='horizontal', command=self.weapons_tree.xview)
+        self.scrollbar_x_weapons.pack(side=tk.BOTTOM, fill=tk.X)
+        self.weapons_tree.configure(xscrollcommand=self.scrollbar_x_weapons.set)
+
     def populate_all_tables(self):
         self.populate_characters_table()
         self.populate_players_table()
         self.populate_player_characters_table()
         self.populate_memories_table()
         self.populate_disposition_table()
+        self.populate_weapons_table()  # New function to populate weapons
 
     def clear_tables(self):
         """ Clear all tables before repopulating """
-        for tree in [self.characters_tree, self.players_tree, self.player_characters_tree, self.memories_tree, self.disposition_tree]:
+        for tree in [self.characters_tree, self.players_tree, self.player_characters_tree, self.memories_tree, self.disposition_tree, self.weapons_tree]:
             for item in tree.get_children():
                 tree.delete(item)
 
@@ -131,7 +144,7 @@ class DatabaseViewer:
             self.player_characters_tree.insert('', tk.END, values=row)
 
     def populate_memories_table(self):
-        self.c.execute('''SELECT m.id, c.name, m.character_id, m.player_id, p.username, m.memory_log, m.timestamp, m.summarized
+        self.c.execute('''SELECT m.id, c.name, m.character_id, m.player_id, p.username, m.memory_log, m.timestamp
                           FROM memories m
                           JOIN characters c ON m.character_id = c.id
                           JOIN players p ON m.player_id = p.id''')
@@ -145,6 +158,13 @@ class DatabaseViewer:
                           LEFT JOIN players p ON pc.player_id = p.id''')
         for row in self.c.fetchall():
             self.disposition_tree.insert('', tk.END, values=row)
+
+    def populate_weapons_table(self):  # New function to populate the weapons table
+        self.c.execute('''SELECT w.id, w.name, w.type, w.attack_bonus, w.defense_bonus, w.magic_bonus, w.speed_bonus, c.name
+                          FROM weapons w
+                          LEFT JOIN characters c ON c.weapon_id = w.id''')
+        for row in self.c.fetchall():
+            self.weapons_tree.insert('', tk.END, values=row)
 
 
 root = tk.Tk()

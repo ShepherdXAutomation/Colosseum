@@ -96,7 +96,7 @@ def send_chatgpt_api(character, chat_input, memories):
             f"All characters speak with a medieval accent and are not overly polite. They are living their daily lives and may not be helpful. "
             f"You have joined the player's band to take on the Colosseum."
             f"Try to randomize the words you use. Don't use the word 'Aye'"
-            f"Avoid repeating the same sentences or phrases frequently. Vary your responses."
+            f"Avoid repeating the same sentences or phrases frequently. Vary your responses. DONT USE THE PLAYERS NAME IN EVERY CHAT, ARGHHH!!"
             f"Don't ask questions."
             f"Tell stories about all sorts of adventures."
             f"Use the following memory context to guide your response: {memory_context}"
@@ -107,7 +107,7 @@ def send_chatgpt_api(character, chat_input, memories):
 
         # Call to OpenAI's ChatCompletion API for the actual response
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": chat_input}
