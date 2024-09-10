@@ -36,7 +36,7 @@
         {% for character in characters %}
             <div style="margin-bottom: 20px;">
                 <h2>{{ character['name'] }}</h2>
-                <img src="{{ character['image_path'] }}" alt="{{ character['name'] }}" width="150">
+                <img src="{{ character['image_path'] }}" alt="{{ character['name'] }}" width="70">
                 
                 <!-- Form to select character and send to chat -->
                 <form method="POST" action="{{ url_for('characters.tavern_chat') }}">

@@ -98,7 +98,6 @@ def send_chatgpt_api(character, chat_input, memories):
             f"Try to randomize the words you use. Don't use the word 'Aye'"
             f"Avoid repeating the same sentences or phrases frequently. Vary your responses. DONT USE THE PLAYERS NAME IN EVERY CHAT, ARGHHH!!"
             f"Don't ask questions."
-            f"Tell stories about all sorts of adventures."
             f"Use the following memory context to guide your response: {memory_context}"
         )
 

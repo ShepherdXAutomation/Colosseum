@@ -29,6 +29,10 @@ def initialize_app():
     #    init_db()
         #add_columns_if_not_exist()
         #insert_initial_characters()
+        
+@app.route('/game')
+def game():
+    return render_template('game.html')
 
 @app.route('/')
 def index():

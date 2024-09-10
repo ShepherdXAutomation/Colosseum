@@ -92,7 +92,7 @@
             <h1>{% if user %}Main Menu{% else %}The Colosseum{% endif %}</h1>
             {% if user %}
                 <button id="characterCollectionButton" onclick="window.location.href='/character_collection'">Character Collection</button>
-                <button id="colosseumButton">Colosseum</button>
+                <button id="colosseumButton" onclick="window.location.href='/game'">Colosseum</button>
                 <button id="talkToCharactersButton" onclick="window.location.href='{{ url_for('characters.tavern_select') }}'">Tavern</button>
 
             {% endif %}

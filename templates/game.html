@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Colosseum</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <style>
+       
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: sienna;
+            
+        
+        }
+        game-container {
+            width: 70vw;
+            height: 100vh;
+           
+        }
+        canvas {
+            width: 70vw;
+            height: 80vh;
+            margin-top:5%;
+            margin-left: 5%;
+            margin: 5%;
+        }
+
+    </style>
+</head>
+<body>
+<p>AI Chat Area</p>
+<div id="game-container"></div>
+
+<script>
+    // Initialize Phaser configuration
+    var config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        parent: 'game-container',
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 0 },
+                debug: false
+            }
+        },
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
+
+    var player;
+    var cursors;
+
+    // Preload assets
+    function preload() {
+        this.load.image('background', '/static/images/background.png'); // Background
+        this.load.spritesheet('character', 'static/images/universal-lpc-sprite_male_01_walk-3frame.png', {
+            frameWidth: 43, 
+            frameHeight: 61,
+            margin: 7,
+            horizontal: 4
+        });
+    }
+
+    // Create the game scene
+    function create() {
+        // Add background
+        const background = this.add.image(400, 300, 'background');
+        const bottomLeft = getBottomLeftCorner(background);
+        const bottomRight = getBottomRightCorner(background);
+
+
+        // Add player sprite and enable physics
+        player = this.physics.add.sprite(bottomLeft.x + 100, bottomLeft.y, 'character');
+
+        // Set bounce and collide with world bounds
+        player.setBounce(0.2);
+        player.setCollideWorldBounds(true);
+
+        // Player Animations
+        this.anims.create({
+            key: 'idle',
+            frames: this.anims.generateFrameNumbers('character', { start: 4, end: 4 }), 
+            frameRate: 8,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'walk',
+            frames: this.anims.generateFrameNumbers('character', { start: 0, end: 2 }),
+            frameRate: 8,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'run',
+            frames: this.anims.generateFrameNumbers('character', { start: 8, end: 11 }), 
+            frameRate: 12,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'attack1',
+            frames: this.anims.generateFrameNumbers('character', { start: 12, end: 15 }), 
+            frameRate: 10,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'attack2',
+            frames: this.anims.generateFrameNumbers('character', { start: 16, end: 19 }), 
+            frameRate: 10,
+            repeat: -1
+        });
+
+        player.anims.play('walk');
+
+        this.tweens.add({
+            targets: player,
+            y: 300, // Move to middle of the screen
+            ease: 'Linear', // Linear movement
+            duration: 4000, // 3 seconds
+            repeat: 0, // Do not repeat
+            onComplete: function() {
+                player.anims.play('idle') // Stop the walking animation when the character reaches the destination
+            }
+        });
+        // Enable keyboard input
+        cursors = this.input.keyboard.createCursorKeys();
+        
+       
+    }
+
+    // Update loop for the game
+    function update() {
+       
+
+        // Jump when pressing the space bar and on the ground
+        if (cursors.space.isDown && player.body.touching.down) {
+            player.setVelocityY(-330);
+        }
+    }
+
+    // Start the Phaser game with the configuration
+    var game = new Phaser.Game(config);
+
+
+    // Function to get the bottom-left corner of the background image
+function getBottomLeftCorner(background) {
+    const x = background.x - background.displayWidth / 2;
+    const y = background.y + background.displayHeight / 2;
+    return { x, y };
+}
+
+// Function to get the x and y coordinates of the bottom-right corner of the background image
+function getBottomRightCorner(background) {
+    const x = background.x + background.displayWidth / 2;
+    const y = background.y + background.displayHeight / 2;
+    return { x, y };
+}
+
+
+</script>
+<p>Player Chat Area</p>
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+       <div id="inventory-panel">
+        <img class="title" src="static/images/labels/inventory label.png"/>
+
+        <!-- Example item -->
+        <div class="item">
+            <img src="/static/images/weapons/swords/rusty_short_sword.png" alt="Iron Sword">
+            <h4>Rusty Short Sword</h4>
+            <p>Attack Bonus: 2</p>
+        </div>
+       
+        <div class="item">
+            <img src="/static/images/weapons/swords/iron_short_sword.png" alt="Iron Sword">
+            <h4>Iron Short Sword</h4>
+            <p>Attack Bonus: 4</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/steel_broadsword.png" alt="Iron Sword">
+            <h4>Steel Broadsword</h4>
+            <p>Attack Bonus: 6</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/bronze_scimitar.png" alt="Iron Sword">
+            <h4>bronze_scimitar</h4>
+            <p>Attack Bonus: 8</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/silver_rapier.png" alt="Iron Sword">
+            <h4>Silver Rapier</h4>
+            <p>Attack Bonus: 10</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/knights_longsword.png" alt="Iron Sword">
+            <h4>Knight's Longsword</h4>
+            <p>Attack Bonus: 12</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/blazing_falchion.png" alt="Iron Sword">
+            <h4>Blazing Falchion</h4>
+            <p>Attack Bonus: 14</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/dragonbone_saber.png" alt="Iron Sword">
+            <h4>Dragonbone Saber</h4>
+            <p>Attack Bonus: 16</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/mystic_blade.png" alt="Iron Sword">
+            <h4>Mystic Blade</h4>
+            <p>Attack Bonus: 18</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/runed_greatsword.png" alt="Iron Sword">
+            <h4>Runed Greatsword</h4>
+            <p>Attack Bonus: 20</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/moonlit_katana.png" alt="Iron Sword">
+            <h4>Moonlit Katana</h4>
+            <p>Attack Bonus: 22</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/crimsom_claymore.png" alt="Iron Sword">
+            <h4>Crimsom Claymore</h4>
+            <p>Attack Bonus: 24</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/stormbringer_sword.png" alt="Iron Sword">
+            <h4>Stormbringer Sword</h4>
+            <p>Attack Bonus: 26</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/infernal_edge.png" alt="Iron Sword">
+            <h4>Infernal Edge</h4>
+            <p>Attack Bonus: 28</p>
+        </div>
+        <div class="item">
+            <img src="/static/images/weapons/swords/sword_of_legends.png" alt="Iron Sword">
+            <h4>Sword of Legends</h4>
+            <p>Attack Bonus: 30</p>
+        </div>
+        </div>
