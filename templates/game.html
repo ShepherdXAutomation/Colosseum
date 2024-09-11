@@ -55,6 +55,7 @@
     };
 
     var player;
+    var enemy;
     var cursors;
 
     // Preload assets
@@ -65,6 +66,13 @@
             frameHeight: 61,
             margin: 7,
             horizontal: 4
+        });
+        this.load.spritesheet('enemy', '/static/images/sprites/fairyman_walk.png', {
+            frameWidth: 58,
+            frameHeight: 46,
+            margin: 20,
+            horizontal: 3,
+            spacing: 6
         });
     }
 
@@ -78,11 +86,12 @@
 
         // Add player sprite and enable physics
         player = this.physics.add.sprite(bottomLeft.x + 100, bottomLeft.y, 'character');
+        enemy = this.physics.add.sprite(bottomRight.x-250, bottomRight.y, 'enemy')
 
         // Set bounce and collide with world bounds
         player.setBounce(0.2);
         player.setCollideWorldBounds(true);
-
+       
         // Player Animations
         this.anims.create({
             key: 'idle',
@@ -92,12 +101,23 @@
         });
 
         this.anims.create({
-            key: 'walk',
+            key: 'villager-walk',
             frames: this.anims.generateFrameNumbers('character', { start: 0, end: 2 }),
             frameRate: 8,
             repeat: -1
         });
-
+        this.anims.create({
+            key: 'nostalgia-enemy-walk-up',
+            frames: this.anims.generateFrameNumbers('enemy', { start: 9, end: 11 }),
+            frameRate: 8,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'nostalgia-enemy-idle-left',
+            frames: this.anims.generateFrameNumbers('enemy', {start: 4, end: 4}),
+            frameRate: 8,
+            repeat: -1
+        });
         this.anims.create({
             key: 'run',
             frames: this.anims.generateFrameNumbers('character', { start: 8, end: 11 }), 
@@ -119,7 +139,8 @@
             repeat: -1
         });
 
-        player.anims.play('walk');
+        player.anims.play('villager-walk');
+        enemy.anims.play('nostalgia-enemy-walk-up');
 
         this.tweens.add({
             targets: player,
@@ -131,6 +152,16 @@
                 player.anims.play('idle') // Stop the walking animation when the character reaches the destination
             }
         });
+        this.tweens.add({
+            targets: enemy,
+            y: 300,
+            ease: 'Power1',
+            duration: 4000,
+            repeat: 0,
+            onComplete: function(){
+                enemy.anims.play('nostalgia-enemy-idle-left')
+            }
+        })
         // Enable keyboard input
         cursors = this.input.keyboard.createCursorKeys();
         
