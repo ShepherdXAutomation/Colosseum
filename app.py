@@ -25,7 +25,7 @@ def initialize_app():
     """
     Initialize the database and insert data. This should only run once when the app starts.
     """
-   # with app.app_context():
+    # with app.app_context():
     #    init_db()
         #add_columns_if_not_exist()
         #insert_initial_characters()
@@ -55,14 +55,33 @@ def select_character():
 
 @app.route('/start_game', methods=['POST'])
 def start_game():
-    # Get the selected character's ID from the form
     selected_character_id = request.form['character_id']
     
-    # Store the selected character ID in the session
-    session['selected_character_id'] = selected_character_id
-    
-    # Redirect to the game route
-    return redirect(url_for('game'))
+    # Redirect to the game route, passing the character ID as a query parameter
+    return redirect(url_for('game', character_id=selected_character_id))
+
+
+
+
+@app.route('/game')
+def game():
+    character_id = request.args.get('character_id')
+
+    if not character_id:
+        return redirect(url_for('game_select'))
+
+    conn = get_db_connection()
+    c = conn.cursor()
+
+    # Fetch the character's full data using the ID
+    c.execute('SELECT * FROM characters WHERE id = ?', (character_id,))
+    character = c.fetchone()
+    conn.close()
+
+    if not character:
+        return redirect(url_for('game_select'))
+
+    return render_template('game.html', character=character)
 
 
 @app.route('/')

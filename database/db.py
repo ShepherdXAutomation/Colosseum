@@ -19,29 +19,33 @@ def init_db():
                     profile_picture TEXT
                 )''')
 
-    # Create characters table if not exists
+ # Create characters table if not exists
     c.execute('''CREATE TABLE IF NOT EXISTS characters (
-                   id INTEGER PRIMARY KEY AUTOINCREMENT,
-                   name TEXT NOT NULL,
-                   hp INTEGER,
-                   attack INTEGER,
-                   defense INTEGER,
-                   speed INTEGER,
-                   luck INTEGER,
-                   magic INTEGER,
-                   level INTEGER,
-                   skill1 TEXT,
-                   skill2 TEXT,
-                   image_path TEXT,
-                   personality TEXT,
-                   available_points INTEGER DEFAULT 0,
-                   personality_description TEXT,
-                   neutral_points INTEGER DEFAULT 0,
-                   positive_points INTEGER DEFAULT 0,
-                   negative_points INTEGER DEFAULT 0,
-                   weapon_id INTEGER
+               id INTEGER PRIMARY KEY AUTOINCREMENT,
+               name TEXT NOT NULL,
+               hp INTEGER,
+               attack INTEGER,
+               defense INTEGER,
+               speed INTEGER,
+               luck INTEGER,
+               magic INTEGER,
+               level INTEGER,
+               skill1 TEXT,
+               skill2 TEXT,
+               image_path TEXT,
+               personality TEXT,
+               available_points INTEGER DEFAULT 0,
+               personality_description TEXT,
+               neutral_points INTEGER DEFAULT 0,
+               positive_points INTEGER DEFAULT 0,
+               negative_points INTEGER DEFAULT 0,
+               name_asked TEXT DEFAULT no,
+               weapon_id INTEGER,
+               sprite_sheet_path TEXT,
+               sprite_json_path TEXT,
+               sound_path TEXT          
+           )''')
 
-               )''')
     
     c.execute(''' CREATE TABLE IF NOT EXISTS weapons (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -225,7 +229,7 @@ def update_disposition_points(character_id, tone):
 
 # Initialize the database and insert initial characters
 init_db()
-add_columns_if_not_exist()
+#add_columns_if_not_exist()
 insert_initial_characters()
 
 
