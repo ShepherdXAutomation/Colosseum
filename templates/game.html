@@ -33,6 +33,11 @@
 <p>AI Chat Area</p>
 <div id="game-container"></div>
 
+ <!-- Embed character data into JavaScript variable -->
+ <script>
+    var characterData = {{ character|tojson }};
+</script>
+
 <script type = "module">
     // Initialize Phaser configuration
     console.log("Game is starting"); // Simple test
@@ -64,12 +69,21 @@
  // Preload assets
 function preload() {
     this.load.image('background', '/static/images/background.png'); // Background
-    this.load.spritesheet('character', 'static/images/universal-lpc-sprite_male_01_walk-3frame.png', {
-        frameWidth: 43, 
-        frameHeight: 61,
-        margin: 7,
-        horizontal: 4
-    });
+    if (characterData.sprite_sheet_path && characterData.sprite_json_path) {
+        // If you have a JSON atlas
+        this.load.atlas('character', characterData.sprite_sheet_path, characterData.sprite_json_path);
+    } else if (characterData.sprite_sheet_path) {
+        // If you have a sprite sheet without JSON
+        this.load.spritesheet('character', characterData.sprite_sheet_path, {
+            frameWidth: 64, // Replace with actual frame width
+            frameHeight: 64, // Replace with actual frame height
+            margin: 0,
+            spacing: 0
+        });
+    } else {
+        console.error('Character sprite paths are not provided.');
+    }
+    
     this.load.audio('backgroundMusic', 'static/necromancers_tower.ogg');
     this.load.audio('whipSound', 'static/whip.wav');
     this.load.atlas('strongfairy', '/static/images/sprites/strongfairy-1.png', '/static/images/sprites/strongfairy-1.json');
