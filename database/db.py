@@ -43,7 +43,7 @@ def init_db():
                weapon_id INTEGER,
                sprite_sheet_path TEXT,
                sprite_json_path TEXT,
-               sound_path TEXT          
+               sound_folder_path TEXT          
            )''')
 
     
@@ -117,8 +117,11 @@ def add_columns_if_not_exist():
         ('neutral_points', 'INTEGER DEFAULT 0'),
         ('positive_points', 'INTEGER DEFAULT 0'),
         ('negative_points', 'INTEGER DEFAULT 0'),
-        ('name_asked', 'TEXT DEFAULT no'),
-        ('weapon_id', 'INTEGER')
+        ('name_asked', 'TEXT DEFAULT "no"'),
+        ('weapon_id', 'INTEGER'),
+        ('sprite_sheet_path', 'TEXT'),
+        ('sprite_json_path', 'TEXT'),
+        ('sound_folder_path', 'TEXT')
     ]
 
     # Check if any column is missing
@@ -170,6 +173,10 @@ def insert_initial_characters():
             "positive_points": 0,
             "negative_points": 0,
             "name_asked": "no",
+            "sprite_sheet_path": "/static/images/sprites/villager_sprite.png",
+            "sprite_json_path": "/static/images/sprites/villager_sprite.json",
+            "sound_folder_path": "/static/sounds/villager"
+
         },
         {
             "name": "Friendly Dog",
@@ -188,7 +195,10 @@ def insert_initial_characters():
             "neutral_points": 0,
             "positive_points": 0,
             "negative_points": 0,
-            "name_asked": "no"
+            "name_asked": "no",
+            "sprite_sheet_path": "/static/images/sprites/dog_sprite.png",
+            "sprite_json_path": "/static/images/sprites/dog_sprite.json",
+            "sound_folder_path": "/static/sounds/dog"
         },
         # Add more characters here if needed...
     ]
@@ -203,9 +213,9 @@ def insert_initial_characters():
 
         # If the character doesn't exist, insert it
         if result is None:
-            c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality, personality_description, neutral_points, positive_points, negative_points, name_asked)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-          (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["personality_description"], char["neutral_points"], char["positive_points"], char["negative_points"], char["name_asked"]))
+            c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality, personality_description, neutral_points, positive_points, negative_points, name_asked, sprite_sheet_path, sprite_json_path, sound_folder_path)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+          (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["personality_description"], char["neutral_points"], char["positive_points"], char["negative_points"], char["name_asked"], char["sprite_sheet_path"], char["sprite_json_path"], char["sound_folder_path"]))
 
 
     conn.commit()
