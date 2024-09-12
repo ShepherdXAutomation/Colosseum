@@ -67,7 +67,8 @@
             margin: 7,
             horizontal: 4
         });
-        this.load.audio('backgroundMusic', '/path/to/your/audiofile.mp3');
+        this.load.audio('backgroundMusic', 'static/necromancers_tower.ogg');
+        this.load.audio('whipSound', 'static/whip.wav');
         this.load.atlas('strongfairy', '/static/images/sprites/strongfairy-1.png', '/static/images/sprites/strongfairy-1.json');
 
 
@@ -79,8 +80,14 @@
         const background = this.add.image(400, 300, 'background');
         const bottomLeft = getBottomLeftCorner(background);
         const bottomRight = getBottomRightCorner(background);
+        // Play background music
+        var music = this.sound.add('backgroundMusic', {
+            loop: true
+        });
+        music.play();
+        var whipSound = this.sound.add('whipSound');
 
-
+      
         // Add player sprite and enable physics
         player = this.physics.add.sprite(400, bottomLeft.y, 'character');
         
@@ -177,6 +184,7 @@
             frameRate: 10,
             repeat: -1
         });
+        
 
         this.anims.create({
             key: 'attack2',
@@ -184,6 +192,11 @@
             frameRate: 10,
             repeat: -1
         });
+        enemy.on('animationupdate', function (animation, frame) {
+    if (animation.key === 'fairy-whip' && frame.index === 4) {
+        whipSound.play();  // Play sound at frame 4
+    }
+});
 
         player.anims.play('villager-walk');
         enemy.anims.play('fairy-walk-down');
