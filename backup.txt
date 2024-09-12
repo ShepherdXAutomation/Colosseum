@@ -1,60 +1,143 @@
-import os
-from openai import OpenAI
-from dotenv import load_dotenv
+<script>
+    // Initialize Phaser configuration
+    var config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        parent: 'game-container',
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 0 },
+                debug: false
+            }
+        },
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
 
-# Load environment variables from .env file if it exists
-load_dotenv()
+    var player;
+    var enemy;
+    var cursors;
 
-# Try to get the API key from different sources
-api_key = os.getenv('OPENAI_API_KEY') or os.environ.get('OPENAI_API_KEY')
+    // Preload assets
+    function preload() {
+        this.load.json('animationsData', 'templates/js/anims.json')
+        this.load.image('background', '/static/images/background.png'); // Background
+        this.load.spritesheet('character', 'static/images/universal-lpc-sprite_male_01_walk-3frame.png', {
+            frameWidth: 43, 
+            frameHeight: 61,
+            margin: 7,
+            horizontal: 4
+        });
+        this.load.audio('backgroundMusic', 'static/necromancers_tower.ogg');
+        this.load.audio('whipSound', 'static/whip.wav');
+        this.load.atlas('strongfairy', '/static/images/sprites/strongfairy-1.png', '/static/images/sprites/strongfairy-1.json');
 
-if not api_key:
-    raise ValueError("No OpenAI API key found. Please set the OPENAI_API_KEY environment variable.")
 
-try:
-    client = OpenAI(api_key=api_key)
-except Exception as e:
-    print(f"Error initializing OpenAI client: {e}")
-    raise
+    }
 
-def send_chatgpt_api(character, chat_input, memories):
-    """
-    Sends chat input and memories to OpenAI's API and returns the response.
+    // Create the game scene
+    function create() {
+        // Add background
+        const background = this.add.image(400, 300, 'background');
+        const bottomLeft = getBottomLeftCorner(background);
+        const bottomRight = getBottomRightCorner(background);
+        // Play background music
+        var music = this.sound.add('backgroundMusic', {
+            loop: true
+        });
+        music.play();
+        var whipSound = this.sound.add('whipSound');
 
-    :param character: The character's data (name, personality, etc.)
-    :param chat_input: The player's input message.
-    :param memories: A list of memories for context in the chat.
-    :return: The response from the OpenAI API.
-    """
+      
+        // Add player sprite and enable physics
+        player = this.physics.add.sprite(400, bottomLeft.y, 'character');
+        
 
-    # System message to set the tone of the assistant
-    system_message = f"You are {character['name']}, a character with the personality: {character['personality']}."
+        // Set bounce and collide with world bounds
+        player.setBounce(0.2);
+        player.setCollideWorldBounds(true);
+        
 
-    # Combine the memories into a single context string
-    memory_context = "\n".join([f"Memory {i+1}: {memory}" for i, memory in enumerate(memories)])
+        // Add the sprite and play the animation
+        let enemy = this.add.sprite(400, 150, 'strongfairy');
 
-    # Print the data being sent to the API
-    print("Sending to OpenAI API:")
-    print(f"System Message: {system_message}")
-    print(f"Memory Context: {memory_context}")
-    print(f"User Input: {chat_input}")
+       
+        // Load Animations
+        let animationData = this.cache.json.get('animationData');
+            animationData.anims.forEach(anim => {
+            this.anims.create(anim);
+        });
 
-    try:
-        # Call to OpenAI's ChatCompletion API with the new format
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",  # or "gpt-4" if you're using GPT-4
-            messages=[
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": f"{memory_context}\n\n{chat_input}"}
-            ],
-            max_tokens=150,  # Adjust based on the length of response you want
-            temperature=0.7  # Adjust based on desired creativity level
-        )
+        player.anims.play('villager-walk');
+        enemy.anims.play('fairy-walk-down');
+        
 
-        # Extracting the text of the assistant's reply
-        assistant_reply = response.choices[0].message.content.strip()
-        return assistant_reply
+        this.tweens.add({
+            targets: player,
+            y: 450, // Move to middle of the screen
+            ease: 'Linear', // Linear movement
+            duration: 4000, // 3 seconds
+            repeat: 0, // Do not repeat
+            onComplete: function() {
+                player.anims.play('idle') // Stop the walking animation when the character reaches the destination
+            }
+        });
+        this.tweens.add({
+            targets: enemy,
+            y: 300,
+            ease: 'linear',
+            duration: 4000,
+            repeat: 0,
+            onComplete: function(){
+                enemy.anims.play('fairy-dance');
 
-    except Exception as e:
-        print(f"An error occurred while calling the OpenAI API: {e}")
-        return None
+                enemy.scene.time.delayedCall(1000,function(){
+
+                    enemy.anims.play('fairy-whip');
+                    
+                    enemy.scene.time.delayedCall(1000, function(){
+
+                        enemy.anims.play('fairy-idle');
+                    });
+                });
+            }
+        });
+        // Enable keyboard input
+        cursors = this.input.keyboard.createCursorKeys();
+        
+       
+    }
+
+    // Update loop for the game
+    function update() {
+        // Jump when pressing the space bar and on the ground
+        if (cursors.space.isDown && player.body.touching.down) {
+            player.setVelocityY(-330);
+        }
+    }
+
+    // Start the Phaser game with the configuration
+    var game = new Phaser.Game(config);
+
+
+    // Function to get the bottom-left corner of the background image
+function getBottomLeftCorner(background) {
+    const x = background.x - background.displayWidth / 2;
+    const y = background.y + background.displayHeight / 2;
+    return { x, y };
+}
+
+// Function to get the x and y coordinates of the bottom-right corner of the background image
+function getBottomRightCorner(background) {
+    const x = background.x + background.displayWidth / 2;
+    const y = background.y + background.displayHeight / 2;
+    return { x, y };
+}
+
+
+</script>

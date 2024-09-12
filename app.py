@@ -30,9 +30,40 @@ def initialize_app():
         #add_columns_if_not_exist()
         #insert_initial_characters()
         
-@app.route('/game')
-def game():
-    return render_template('game.html')
+@app.route('/game_select')
+def select_character():
+    if 'user_id' in session:
+        user_id = session['user_id']
+        conn = get_db_connection()
+        c = conn.cursor()
+        
+        # Query characters only for the logged-in user
+        c.execute('''
+            SELECT c.id, c.name, c.image_path 
+            FROM characters c
+            JOIN player_characters pc ON c.id = pc.character_id
+            WHERE pc.player_id = ?
+        ''', (user_id,))
+        
+        characters = c.fetchall()
+        conn.close()
+        
+        return render_template('game_select.html', characters=characters)
+    else:
+        return redirect(url_for('login'))
+
+
+@app.route('/start_game', methods=['POST'])
+def start_game():
+    # Get the selected character's ID from the form
+    selected_character_id = request.form['character_id']
+    
+    # Store the selected character ID in the session
+    session['selected_character_id'] = selected_character_id
+    
+    # Redirect to the game route
+    return redirect(url_for('game'))
+
 
 @app.route('/')
 def index():
@@ -49,5 +80,6 @@ if __name__ == '__main__':
     # Prevent multiple initialization runs when the app auto-reloads
     if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
         initialize_app()
-
     app.run(debug=True, host='0.0.0.0', port=5001)
+
+

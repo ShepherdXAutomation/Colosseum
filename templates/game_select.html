@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Character</title>
+    <style>
+        .character-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: lightgray;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+
+        .character-button img {
+            width: 100px;
+            height: 100px;
+            display: block;
+        }
+
+        .character-button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select Your Character</h2>
+
+    <form action="{{ url_for('start_game') }}" method="POST">
+        <div class="character-grid">
+            {% for character in characters %}
+                <button type="submit" name="character_id" value="{{ character['id'] }}" class="character-button">
+                    <img src="{{ character['image_path'] }}" alt="{{ character['name'] }}">
+                    <span>{{ character['name'] }}</span>
+                </button>
+            {% endfor %}
+        </div>
+    </form>
+</body>
+</html>
