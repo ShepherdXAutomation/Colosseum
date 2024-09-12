@@ -1,0 +1,8210 @@
+{
+	"textures": [
+		{
+			"image": "strongfairy-1.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 490,
+				"h": 1199
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "strongfairy367.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 116,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 116,
+						"h": 50
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 116,
+						"h": 50
+					}
+				},
+				{
+					"filename": "strongfairy386.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 116,
+						"h": 50
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 116,
+						"h": 50
+					},
+					"frame": {
+						"x": 0,
+						"y": 50,
+						"w": 116,
+						"h": 50
+					}
+				},
+				{
+					"filename": "strongfairy368.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 117,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 117,
+						"h": 47
+					},
+					"frame": {
+						"x": 116,
+						"y": 0,
+						"w": 117,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy387.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 117,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 117,
+						"h": 47
+					},
+					"frame": {
+						"x": 116,
+						"y": 47,
+						"w": 117,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy366.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 59
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 59
+					},
+					"frame": {
+						"x": 0,
+						"y": 100,
+						"w": 96,
+						"h": 59
+					}
+				},
+				{
+					"filename": "strongfairy385.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 59
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 59
+					},
+					"frame": {
+						"x": 233,
+						"y": 0,
+						"w": 96,
+						"h": 59
+					}
+				},
+				{
+					"filename": "strongfairy370.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 103,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 103,
+						"h": 47
+					},
+					"frame": {
+						"x": 329,
+						"y": 0,
+						"w": 103,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy378.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 61
+					},
+					"frame": {
+						"x": 432,
+						"y": 0,
+						"w": 58,
+						"h": 61
+					}
+				},
+				{
+					"filename": "strongfairy361.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 63,
+						"h": 85
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 63,
+						"h": 85
+					},
+					"frame": {
+						"x": 0,
+						"y": 159,
+						"w": 63,
+						"h": 85
+					}
+				},
+				{
+					"filename": "strongfairy356.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 63,
+						"h": 82
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 63,
+						"h": 82
+					},
+					"frame": {
+						"x": 0,
+						"y": 244,
+						"w": 63,
+						"h": 82
+					}
+				},
+				{
+					"filename": "strongfairy360.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 85
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 85
+					},
+					"frame": {
+						"x": 0,
+						"y": 326,
+						"w": 57,
+						"h": 85
+					}
+				},
+				{
+					"filename": "strongfairy377.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 84
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 84
+					},
+					"frame": {
+						"x": 0,
+						"y": 411,
+						"w": 55,
+						"h": 84
+					}
+				},
+				{
+					"filename": "strongfairy375.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 60,
+						"h": 79
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 60,
+						"h": 79
+					},
+					"frame": {
+						"x": 0,
+						"y": 495,
+						"w": 60,
+						"h": 79
+					}
+				},
+				{
+					"filename": "strongfairy359.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 78
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 78
+					},
+					"frame": {
+						"x": 0,
+						"y": 574,
+						"w": 57,
+						"h": 78
+					}
+				},
+				{
+					"filename": "strongfairy388.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 103,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 103,
+						"h": 47
+					},
+					"frame": {
+						"x": 233,
+						"y": 59,
+						"w": 103,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy364.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 87,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 87,
+						"h": 51
+					},
+					"frame": {
+						"x": 336,
+						"y": 47,
+						"w": 87,
+						"h": 51
+					}
+				},
+				{
+					"filename": "strongfairy374.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 67,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 67,
+						"h": 47
+					},
+					"frame": {
+						"x": 423,
+						"y": 61,
+						"w": 67,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy358.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 67
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 67
+					},
+					"frame": {
+						"x": 0,
+						"y": 652,
+						"w": 57,
+						"h": 67
+					}
+				},
+				{
+					"filename": "strongfairy365.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 77,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 77,
+						"h": 61
+					},
+					"frame": {
+						"x": 0,
+						"y": 719,
+						"w": 77,
+						"h": 61
+					}
+				},
+				{
+					"filename": "strongfairy384.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 77,
+						"h": 61
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 77,
+						"h": 61
+					},
+					"frame": {
+						"x": 0,
+						"y": 780,
+						"w": 77,
+						"h": 61
+					}
+				},
+				{
+					"filename": "strongfairy357.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 73,
+						"h": 57
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 73,
+						"h": 57
+					},
+					"frame": {
+						"x": 0,
+						"y": 841,
+						"w": 73,
+						"h": 57
+					}
+				},
+				{
+					"filename": "strongfairy383.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 87,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 87,
+						"h": 51
+					},
+					"frame": {
+						"x": 0,
+						"y": 898,
+						"w": 87,
+						"h": 51
+					}
+				},
+				{
+					"filename": "strongfairy373.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 65,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 65,
+						"h": 58
+					},
+					"frame": {
+						"x": 0,
+						"y": 949,
+						"w": 65,
+						"h": 58
+					}
+				},
+				{
+					"filename": "strongfairy355.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 56
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 56
+					},
+					"frame": {
+						"x": 0,
+						"y": 1007,
+						"w": 58,
+						"h": 56
+					}
+				},
+				{
+					"filename": "strongfairy354.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 55
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 55
+					},
+					"frame": {
+						"x": 0,
+						"y": 1063,
+						"w": 58,
+						"h": 55
+					}
+				},
+				{
+					"filename": "strongfairy372.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 55
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 55
+					},
+					"frame": {
+						"x": 0,
+						"y": 1118,
+						"w": 58,
+						"h": 55
+					}
+				},
+				{
+					"filename": "strongfairy376.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 59,
+						"h": 55
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 59,
+						"h": 55
+					},
+					"frame": {
+						"x": 63,
+						"y": 159,
+						"w": 59,
+						"h": 55
+					}
+				},
+				{
+					"filename": "strongfairy80.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 48
+					},
+					"frame": {
+						"x": 63,
+						"y": 214,
+						"w": 58,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy82.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 48
+					},
+					"frame": {
+						"x": 63,
+						"y": 262,
+						"w": 58,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy247.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 51
+					},
+					"frame": {
+						"x": 96,
+						"y": 108,
+						"w": 24,
+						"h": 51
+					}
+				},
+				{
+					"filename": "strongfairy362.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 65,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 65,
+						"h": 47
+					},
+					"frame": {
+						"x": 120,
+						"y": 94,
+						"w": 65,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy40.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 47,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 47,
+						"h": 47
+					},
+					"frame": {
+						"x": 185,
+						"y": 94,
+						"w": 47,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy42.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 47,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 47,
+						"h": 47
+					},
+					"frame": {
+						"x": 185,
+						"y": 94,
+						"w": 47,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy381.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 65,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 65,
+						"h": 47
+					},
+					"frame": {
+						"x": 232,
+						"y": 106,
+						"w": 65,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy84.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 48
+					},
+					"frame": {
+						"x": 122,
+						"y": 141,
+						"w": 58,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy106.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 52,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 52,
+						"h": 47
+					},
+					"frame": {
+						"x": 180,
+						"y": 141,
+						"w": 52,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy111.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 59,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 59,
+						"h": 46
+					},
+					"frame": {
+						"x": 232,
+						"y": 153,
+						"w": 59,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 297,
+						"y": 106,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy36.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 297,
+						"y": 106,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy69.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 297,
+						"y": 106,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy102.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 297,
+						"y": 106,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy86.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 48
+					},
+					"frame": {
+						"x": 338,
+						"y": 98,
+						"w": 58,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 291,
+						"y": 153,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy96.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 291,
+						"y": 153,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy30.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 48
+					},
+					"frame": {
+						"x": 349,
+						"y": 146,
+						"w": 57,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy261.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 47
+					},
+					"frame": {
+						"x": 396,
+						"y": 98,
+						"w": 27,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy113.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 59,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 59,
+						"h": 47
+					},
+					"frame": {
+						"x": 423,
+						"y": 108,
+						"w": 59,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 122,
+						"y": 189,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy118.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 52,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 52,
+						"h": 47
+					},
+					"frame": {
+						"x": 180,
+						"y": 188,
+						"w": 52,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy363.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 59,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 59,
+						"h": 47
+					},
+					"frame": {
+						"x": 121,
+						"y": 235,
+						"w": 59,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy14.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 180,
+						"y": 235,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy177.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 36
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 36
+					},
+					"frame": {
+						"x": 232,
+						"y": 199,
+						"w": 58,
+						"h": 36
+					}
+				},
+				{
+					"filename": "strongfairy15.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 238,
+						"y": 235,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy382.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 59,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 59,
+						"h": 47
+					},
+					"frame": {
+						"x": 121,
+						"y": 282,
+						"w": 59,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 180,
+						"y": 282,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy17.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 238,
+						"y": 282,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 63,
+						"y": 310,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy18.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 57,
+						"y": 356,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 121,
+						"y": 329,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 121,
+						"y": 329,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 179,
+						"y": 329,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 237,
+						"y": 329,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy19.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 406,
+						"y": 155,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy234.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 49
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 49
+					},
+					"frame": {
+						"x": 464,
+						"y": 155,
+						"w": 26,
+						"h": 49
+					}
+				},
+				{
+					"filename": "strongfairy20.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 115,
+						"y": 375,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy29.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 173,
+						"y": 375,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy44.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 231,
+						"y": 375,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy78.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 231,
+						"y": 375,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy108.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 231,
+						"y": 375,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 57,
+						"y": 403,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy45.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 55,
+						"y": 449,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy31.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 48
+					},
+					"frame": {
+						"x": 60,
+						"y": 495,
+						"w": 56,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 47
+					},
+					"frame": {
+						"x": 60,
+						"y": 543,
+						"w": 56,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy35.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 48
+					},
+					"frame": {
+						"x": 57,
+						"y": 590,
+						"w": 57,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy62.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 57,
+						"y": 638,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy60.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 115,
+						"y": 422,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy61.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 173,
+						"y": 422,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy63.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 231,
+						"y": 422,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy64.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 116,
+						"y": 468,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy66.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 116,
+						"y": 515,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy99.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 47
+					},
+					"frame": {
+						"x": 174,
+						"y": 468,
+						"w": 57,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy65.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 231,
+						"y": 469,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy67.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 174,
+						"y": 515,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy68.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 232,
+						"y": 515,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy79.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 116,
+						"y": 562,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy81.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 174,
+						"y": 562,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy83.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 232,
+						"y": 562,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy85.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 115,
+						"y": 609,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy109.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 173,
+						"y": 609,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy112.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 231,
+						"y": 609,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy97.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 115,
+						"y": 656,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy172.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 173,
+						"y": 656,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy371.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 47
+					},
+					"frame": {
+						"x": 231,
+						"y": 656,
+						"w": 58,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy176.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 46,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 46,
+						"h": 28
+					},
+					"frame": {
+						"x": 290,
+						"y": 199,
+						"w": 46,
+						"h": 28
+					}
+				},
+				{
+					"filename": "strongfairy8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 43,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 43,
+						"h": 47
+					},
+					"frame": {
+						"x": 296,
+						"y": 227,
+						"w": 43,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy10.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 44,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 44,
+						"h": 47
+					},
+					"frame": {
+						"x": 296,
+						"y": 274,
+						"w": 44,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy251.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 51
+					},
+					"frame": {
+						"x": 65,
+						"y": 949,
+						"w": 24,
+						"h": 51
+					}
+				},
+				{
+					"filename": "strongfairy98.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 46
+					},
+					"frame": {
+						"x": 349,
+						"y": 194,
+						"w": 57,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy121.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 43
+					},
+					"frame": {
+						"x": 406,
+						"y": 202,
+						"w": 58,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy228.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 45
+					},
+					"frame": {
+						"x": 464,
+						"y": 204,
+						"w": 26,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy291.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 26
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 26
+					},
+					"frame": {
+						"x": 0,
+						"y": 1173,
+						"w": 19,
+						"h": 26
+					}
+				},
+				{
+					"filename": "strongfairy297.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 26
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 26
+					},
+					"frame": {
+						"x": 19,
+						"y": 1173,
+						"w": 19,
+						"h": 26
+					}
+				},
+				{
+					"filename": "strongfairy317.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 26
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 26
+					},
+					"frame": {
+						"x": 38,
+						"y": 1173,
+						"w": 19,
+						"h": 26
+					}
+				},
+				{
+					"filename": "strongfairy100.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 47
+					},
+					"frame": {
+						"x": 340,
+						"y": 240,
+						"w": 57,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy101.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 47
+					},
+					"frame": {
+						"x": 340,
+						"y": 287,
+						"w": 57,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy173.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 46
+					},
+					"frame": {
+						"x": 397,
+						"y": 245,
+						"w": 58,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy174.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 58,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 58,
+						"h": 42
+					},
+					"frame": {
+						"x": 397,
+						"y": 291,
+						"w": 58,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy193.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 48
+					},
+					"frame": {
+						"x": 455,
+						"y": 249,
+						"w": 32,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy184.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 46
+					},
+					"frame": {
+						"x": 455,
+						"y": 297,
+						"w": 32,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy13.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 44,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 44,
+						"h": 47
+					},
+					"frame": {
+						"x": 296,
+						"y": 321,
+						"w": 44,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy147.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 334,
+						"w": 57,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy33.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 47
+					},
+					"frame": {
+						"x": 397,
+						"y": 333,
+						"w": 56,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy201.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 34,
+						"h": 44
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 34,
+						"h": 44
+					},
+					"frame": {
+						"x": 453,
+						"y": 343,
+						"w": 34,
+						"h": 44
+					}
+				},
+				{
+					"filename": "strongfairy37.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 45,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 45,
+						"h": 47
+					},
+					"frame": {
+						"x": 295,
+						"y": 368,
+						"w": 45,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy148.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 57,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 376,
+						"w": 57,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy34.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 47
+					},
+					"frame": {
+						"x": 397,
+						"y": 380,
+						"w": 56,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy41.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 50,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 50,
+						"h": 47
+					},
+					"frame": {
+						"x": 289,
+						"y": 415,
+						"w": 50,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy46.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 46
+					},
+					"frame": {
+						"x": 339,
+						"y": 418,
+						"w": 56,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy57.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 50,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 50,
+						"h": 47
+					},
+					"frame": {
+						"x": 289,
+						"y": 462,
+						"w": 50,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy47.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 46
+					},
+					"frame": {
+						"x": 339,
+						"y": 464,
+						"w": 56,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy51.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 46
+					},
+					"frame": {
+						"x": 395,
+						"y": 427,
+						"w": 56,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy48.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 45
+					},
+					"frame": {
+						"x": 395,
+						"y": 473,
+						"w": 56,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy50.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 45
+					},
+					"frame": {
+						"x": 395,
+						"y": 473,
+						"w": 56,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy107.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 49,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 49,
+						"h": 47
+					},
+					"frame": {
+						"x": 290,
+						"y": 509,
+						"w": 49,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy49.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 45
+					},
+					"frame": {
+						"x": 339,
+						"y": 510,
+						"w": 56,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy105.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 50,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 50,
+						"h": 47
+					},
+					"frame": {
+						"x": 290,
+						"y": 556,
+						"w": 50,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy110.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 45
+					},
+					"frame": {
+						"x": 340,
+						"y": 555,
+						"w": 55,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy122.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 395,
+						"y": 518,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy120.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 41
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 41
+					},
+					"frame": {
+						"x": 395,
+						"y": 561,
+						"w": 56,
+						"h": 41
+					}
+				},
+				{
+					"filename": "strongfairy209.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 34,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 34,
+						"h": 46
+					},
+					"frame": {
+						"x": 453,
+						"y": 387,
+						"w": 34,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy219.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 34,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 34,
+						"h": 46
+					},
+					"frame": {
+						"x": 451,
+						"y": 433,
+						"w": 34,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy185.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 47
+					},
+					"frame": {
+						"x": 451,
+						"y": 479,
+						"w": 32,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy192.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 47
+					},
+					"frame": {
+						"x": 451,
+						"y": 526,
+						"w": 32,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy210.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 47
+					},
+					"frame": {
+						"x": 451,
+						"y": 526,
+						"w": 32,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy200.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 46
+					},
+					"frame": {
+						"x": 451,
+						"y": 573,
+						"w": 32,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy123.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 600,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy124.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 600,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy128.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 600,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy129.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 600,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy130.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 600,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy131.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 600,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy132.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 600,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy146.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 42
+					},
+					"frame": {
+						"x": 395,
+						"y": 602,
+						"w": 56,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy117.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 50,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 50,
+						"h": 47
+					},
+					"frame": {
+						"x": 290,
+						"y": 603,
+						"w": 50,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy119.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 49,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 49,
+						"h": 47
+					},
+					"frame": {
+						"x": 289,
+						"y": 650,
+						"w": 49,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy125.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 340,
+						"y": 642,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy149.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 395,
+						"y": 644,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy202.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 30,
+						"h": 49
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 30,
+						"h": 49
+					},
+					"frame": {
+						"x": 451,
+						"y": 619,
+						"w": 30,
+						"h": 49
+					}
+				},
+				{
+					"filename": "strongfairy150.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 338,
+						"y": 684,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy151.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 394,
+						"y": 687,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy133.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 450,
+						"y": 687,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy134.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 450,
+						"y": 687,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy135.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 450,
+						"y": 687,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy136.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 450,
+						"y": 687,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy143.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 450,
+						"y": 687,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy145.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 450,
+						"y": 687,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy137.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 450,
+						"y": 726,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy142.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 450,
+						"y": 726,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy144.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 450,
+						"y": 726,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy178.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy179.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy180.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy181.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy182.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy183.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy186.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy187.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy223.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy224.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy225.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy276.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy277.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy278.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy279.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy280.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy281.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy282.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy283.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy284.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy285.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy286.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy287.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy288.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy328.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy329.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy330.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy331.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy332.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy333.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 19
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 19
+					},
+					"frame": {
+						"x": 451,
+						"y": 668,
+						"w": 22,
+						"h": 19
+					}
+				},
+				{
+					"filename": "strongfairy246.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 49
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 49
+					},
+					"frame": {
+						"x": 58,
+						"y": 1007,
+						"w": 23,
+						"h": 49
+					}
+				},
+				{
+					"filename": "strongfairy250.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 49
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 49
+					},
+					"frame": {
+						"x": 58,
+						"y": 1056,
+						"w": 23,
+						"h": 49
+					}
+				},
+				{
+					"filename": "strongfairy245.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 48
+					},
+					"frame": {
+						"x": 58,
+						"y": 1105,
+						"w": 24,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy70.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 45,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 45,
+						"h": 46
+					},
+					"frame": {
+						"x": 58,
+						"y": 1153,
+						"w": 45,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy56.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 47,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 47,
+						"h": 47
+					},
+					"frame": {
+						"x": 289,
+						"y": 697,
+						"w": 47,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy58.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 47,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 47,
+						"h": 47
+					},
+					"frame": {
+						"x": 289,
+						"y": 697,
+						"w": 47,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy152.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 336,
+						"y": 727,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy153.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 392,
+						"y": 730,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 448,
+						"y": 765,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy189.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 20,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 20,
+						"h": 48
+					},
+					"frame": {
+						"x": 73,
+						"y": 841,
+						"w": 20,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy194.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 57,
+						"y": 685,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy256.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 33,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 33,
+						"h": 46
+					},
+					"frame": {
+						"x": 79,
+						"y": 685,
+						"w": 33,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy154.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 112,
+						"y": 702,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy155.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 168,
+						"y": 703,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy156.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 224,
+						"y": 703,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy158.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 224,
+						"y": 703,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy272.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 46
+					},
+					"frame": {
+						"x": 77,
+						"y": 731,
+						"w": 32,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy157.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 56,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 109,
+						"y": 745,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy126.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 165,
+						"y": 746,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy127.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 42
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 165,
+						"y": 746,
+						"w": 55,
+						"h": 42
+					}
+				},
+				{
+					"filename": "strongfairy175.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 55,
+						"h": 40
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 55,
+						"h": 40
+					},
+					"frame": {
+						"x": 220,
+						"y": 746,
+						"w": 55,
+						"h": 40
+					}
+				},
+				{
+					"filename": "strongfairy211.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 44
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 44
+					},
+					"frame": {
+						"x": 77,
+						"y": 777,
+						"w": 32,
+						"h": 44
+					}
+				},
+				{
+					"filename": "strongfairy11.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 46,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 46,
+						"h": 47
+					},
+					"frame": {
+						"x": 109,
+						"y": 788,
+						"w": 46,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy12.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 46,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 46,
+						"h": 47
+					},
+					"frame": {
+						"x": 155,
+						"y": 788,
+						"w": 46,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy25.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 46,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 46,
+						"h": 47
+					},
+					"frame": {
+						"x": 93,
+						"y": 835,
+						"w": 46,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy26.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 46,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 46,
+						"h": 47
+					},
+					"frame": {
+						"x": 139,
+						"y": 835,
+						"w": 46,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy21.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 201,
+						"y": 788,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy52.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 201,
+						"y": 788,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy87.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 201,
+						"y": 788,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy114.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 201,
+						"y": 788,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy38.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 45,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 45,
+						"h": 47
+					},
+					"frame": {
+						"x": 185,
+						"y": 835,
+						"w": 45,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy22.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 43,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 43,
+						"h": 47
+					},
+					"frame": {
+						"x": 242,
+						"y": 786,
+						"w": 43,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy23.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 230,
+						"y": 835,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy197.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 20,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 20,
+						"h": 48
+					},
+					"frame": {
+						"x": 272,
+						"y": 833,
+						"w": 20,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 44,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 44,
+						"h": 47
+					},
+					"frame": {
+						"x": 292,
+						"y": 744,
+						"w": 44,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy138.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 285,
+						"y": 791,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy27.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 44,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 44,
+						"h": 47
+					},
+					"frame": {
+						"x": 292,
+						"y": 830,
+						"w": 44,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy214.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 46,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 46,
+						"h": 43
+					},
+					"frame": {
+						"x": 336,
+						"y": 770,
+						"w": 46,
+						"h": 43
+					}
+				},
+				{
+					"filename": "strongfairy53.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 45,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 45,
+						"h": 47
+					},
+					"frame": {
+						"x": 382,
+						"y": 773,
+						"w": 45,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy54.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 45,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 45,
+						"h": 47
+					},
+					"frame": {
+						"x": 336,
+						"y": 813,
+						"w": 45,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy88.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 45,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 45,
+						"h": 46
+					},
+					"frame": {
+						"x": 381,
+						"y": 820,
+						"w": 45,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy103.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 45,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 45,
+						"h": 47
+					},
+					"frame": {
+						"x": 336,
+						"y": 860,
+						"w": 45,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy115.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 45,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 45,
+						"h": 47
+					},
+					"frame": {
+						"x": 381,
+						"y": 866,
+						"w": 45,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy74.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 44,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 44,
+						"h": 46
+					},
+					"frame": {
+						"x": 292,
+						"y": 877,
+						"w": 44,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy188.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 20,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 20,
+						"h": 47
+					},
+					"frame": {
+						"x": 427,
+						"y": 773,
+						"w": 20,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy205.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 20,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 20,
+						"h": 47
+					},
+					"frame": {
+						"x": 427,
+						"y": 773,
+						"w": 20,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy71.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 43,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 43,
+						"h": 46
+					},
+					"frame": {
+						"x": 447,
+						"y": 812,
+						"w": 43,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy92.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 44,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 44,
+						"h": 46
+					},
+					"frame": {
+						"x": 426,
+						"y": 858,
+						"w": 44,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy196.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 20,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 20,
+						"h": 47
+					},
+					"frame": {
+						"x": 470,
+						"y": 858,
+						"w": 20,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy215.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 20,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 20,
+						"h": 47
+					},
+					"frame": {
+						"x": 470,
+						"y": 858,
+						"w": 20,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy204.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 44,
+						"h": 44
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 44,
+						"h": 44
+					},
+					"frame": {
+						"x": 336,
+						"y": 907,
+						"w": 44,
+						"h": 44
+					}
+				},
+				{
+					"filename": "strongfairy89.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 43,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 43,
+						"h": 46
+					},
+					"frame": {
+						"x": 380,
+						"y": 913,
+						"w": 43,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy39.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 426,
+						"y": 904,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy254.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 47
+					},
+					"frame": {
+						"x": 468,
+						"y": 905,
+						"w": 22,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy43.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 93,
+						"y": 882,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy55.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 135,
+						"y": 882,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy59.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 177,
+						"y": 882,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy73.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 219,
+						"y": 882,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy203.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 31,
+						"h": 44
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 31,
+						"h": 44
+					},
+					"frame": {
+						"x": 261,
+						"y": 882,
+						"w": 31,
+						"h": 44
+					}
+				},
+				{
+					"filename": "strongfairy91.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 89,
+						"y": 929,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy104.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 131,
+						"y": 929,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy116.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 42,
+						"h": 47
+					},
+					"frame": {
+						"x": 173,
+						"y": 929,
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy75.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 215,
+						"y": 929,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy72.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 46
+					},
+					"frame": {
+						"x": 89,
+						"y": 976,
+						"w": 41,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy76.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 130,
+						"y": 976,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy77.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 171,
+						"y": 976,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy93.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 212,
+						"y": 976,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy94.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 81,
+						"y": 1022,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy90.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 46
+					},
+					"frame": {
+						"x": 122,
+						"y": 1023,
+						"w": 41,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy95.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 41,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 41,
+						"h": 47
+					},
+					"frame": {
+						"x": 163,
+						"y": 1023,
+						"w": 41,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy139.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 204,
+						"y": 1023,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy208.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 47
+					},
+					"frame": {
+						"x": 256,
+						"y": 929,
+						"w": 29,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy218.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 47
+					},
+					"frame": {
+						"x": 253,
+						"y": 976,
+						"w": 29,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy140.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 244,
+						"y": 1023,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy249.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 48
+					},
+					"frame": {
+						"x": 285,
+						"y": 926,
+						"w": 24,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy262.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 47
+					},
+					"frame": {
+						"x": 309,
+						"y": 923,
+						"w": 27,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy141.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 336,
+						"y": 951,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy159.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 376,
+						"y": 959,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy160.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 376,
+						"y": 959,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy161.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 376,
+						"y": 959,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy162.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 376,
+						"y": 959,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy169.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 376,
+						"y": 959,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy171.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 376,
+						"y": 959,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy258.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 47
+					},
+					"frame": {
+						"x": 282,
+						"y": 976,
+						"w": 22,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy163.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 284,
+						"y": 1023,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy168.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 284,
+						"y": 1023,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy170.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 284,
+						"y": 1023,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy232.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 45
+					},
+					"frame": {
+						"x": 309,
+						"y": 970,
+						"w": 27,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy164.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 336,
+						"y": 990,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy165.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 376,
+						"y": 998,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy166.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 324,
+						"y": 1029,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy167.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 39
+					},
+					"frame": {
+						"x": 364,
+						"y": 1037,
+						"w": 40,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy260.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 48
+					},
+					"frame": {
+						"x": 416,
+						"y": 959,
+						"w": 28,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy244.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 46
+					},
+					"frame": {
+						"x": 444,
+						"y": 951,
+						"w": 24,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy270.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 47
+					},
+					"frame": {
+						"x": 468,
+						"y": 952,
+						"w": 22,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy207.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 46
+					},
+					"frame": {
+						"x": 416,
+						"y": 1007,
+						"w": 29,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy253.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 46
+					},
+					"frame": {
+						"x": 445,
+						"y": 997,
+						"w": 23,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy274.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 47
+					},
+					"frame": {
+						"x": 468,
+						"y": 999,
+						"w": 22,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy195.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 81,
+						"y": 1069,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy264.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 48
+					},
+					"frame": {
+						"x": 82,
+						"y": 1096,
+						"w": 28,
+						"h": 48
+					}
+				},
+				{
+					"filename": "strongfairy235.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 103,
+						"y": 1069,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy236.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 103,
+						"y": 1069,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy237.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 103,
+						"y": 1069,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy259.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 47
+					},
+					"frame": {
+						"x": 110,
+						"y": 1096,
+						"w": 29,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy302.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 125,
+						"y": 1069,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy340.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 125,
+						"y": 1069,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy265.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 47
+					},
+					"frame": {
+						"x": 139,
+						"y": 1096,
+						"w": 27,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy263.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 30,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 30,
+						"h": 46
+					},
+					"frame": {
+						"x": 166,
+						"y": 1070,
+						"w": 30,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy323.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 26
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 26
+					},
+					"frame": {
+						"x": 147,
+						"y": 1070,
+						"w": 19,
+						"h": 26
+					}
+				},
+				{
+					"filename": "strongfairy213.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 31,
+						"h": 44
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 31,
+						"h": 44
+					},
+					"frame": {
+						"x": 166,
+						"y": 1116,
+						"w": 31,
+						"h": 44
+					}
+				},
+				{
+					"filename": "strongfairy227.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 39
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 39
+					},
+					"frame": {
+						"x": 103,
+						"y": 1160,
+						"w": 28,
+						"h": 39
+					}
+				},
+				{
+					"filename": "strongfairy267.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 30,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 30,
+						"h": 46
+					},
+					"frame": {
+						"x": 131,
+						"y": 1143,
+						"w": 30,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy217.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 46
+					},
+					"frame": {
+						"x": 196,
+						"y": 1070,
+						"w": 29,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy212.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 45
+					},
+					"frame": {
+						"x": 197,
+						"y": 1116,
+						"w": 28,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy275.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 47
+					},
+					"frame": {
+						"x": 225,
+						"y": 1062,
+						"w": 29,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy252.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 46
+					},
+					"frame": {
+						"x": 254,
+						"y": 1062,
+						"w": 28,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy255.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 45
+					},
+					"frame": {
+						"x": 225,
+						"y": 1109,
+						"w": 29,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy268.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 46
+					},
+					"frame": {
+						"x": 282,
+						"y": 1062,
+						"w": 28,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy271.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 29,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 29,
+						"h": 45
+					},
+					"frame": {
+						"x": 254,
+						"y": 1108,
+						"w": 29,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy266.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 27,
+						"h": 47
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 27,
+						"h": 47
+					},
+					"frame": {
+						"x": 283,
+						"y": 1108,
+						"w": 27,
+						"h": 47
+					}
+				},
+				{
+					"filename": "strongfairy226.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 31,
+						"h": 38
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 31,
+						"h": 38
+					},
+					"frame": {
+						"x": 161,
+						"y": 1161,
+						"w": 31,
+						"h": 38
+					}
+				},
+				{
+					"filename": "strongfairy221.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 38
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 38
+					},
+					"frame": {
+						"x": 192,
+						"y": 1161,
+						"w": 28,
+						"h": 38
+					}
+				},
+				{
+					"filename": "strongfairy239.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 38
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 38
+					},
+					"frame": {
+						"x": 220,
+						"y": 1161,
+						"w": 28,
+						"h": 38
+					}
+				},
+				{
+					"filename": "strongfairy240.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 26,
+						"h": 45
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 26,
+						"h": 45
+					},
+					"frame": {
+						"x": 248,
+						"y": 1154,
+						"w": 26,
+						"h": 45
+					}
+				},
+				{
+					"filename": "strongfairy206.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 44
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 44
+					},
+					"frame": {
+						"x": 274,
+						"y": 1155,
+						"w": 25,
+						"h": 44
+					}
+				},
+				{
+					"filename": "strongfairy216.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 25,
+						"h": 44
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 25,
+						"h": 44
+					},
+					"frame": {
+						"x": 299,
+						"y": 1155,
+						"w": 25,
+						"h": 44
+					}
+				},
+				{
+					"filename": "strongfairy248.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 46
+					},
+					"frame": {
+						"x": 310,
+						"y": 1068,
+						"w": 24,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy257.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 46
+					},
+					"frame": {
+						"x": 334,
+						"y": 1068,
+						"w": 24,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy233.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 40
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 40
+					},
+					"frame": {
+						"x": 310,
+						"y": 1114,
+						"w": 28,
+						"h": 40
+					}
+				},
+				{
+					"filename": "strongfairy238.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 31,
+						"h": 37
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 31,
+						"h": 37
+					},
+					"frame": {
+						"x": 358,
+						"y": 1076,
+						"w": 31,
+						"h": 37
+					}
+				},
+				{
+					"filename": "strongfairy269.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 23,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 23,
+						"h": 46
+					},
+					"frame": {
+						"x": 338,
+						"y": 1114,
+						"w": 23,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy273.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 46
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 46
+					},
+					"frame": {
+						"x": 361,
+						"y": 1113,
+						"w": 24,
+						"h": 46
+					}
+				},
+				{
+					"filename": "strongfairy220.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 37
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 37
+					},
+					"frame": {
+						"x": 389,
+						"y": 1076,
+						"w": 28,
+						"h": 37
+					}
+				},
+				{
+					"filename": "strongfairy222.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 28,
+						"h": 37
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 37
+					},
+					"frame": {
+						"x": 389,
+						"y": 1076,
+						"w": 28,
+						"h": 37
+					}
+				},
+				{
+					"filename": "strongfairy303.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 385,
+						"y": 1113,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy308.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 385,
+						"y": 1113,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy341.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 385,
+						"y": 1113,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy345.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 385,
+						"y": 1113,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy190.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy191.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy229.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy230.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy231.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy289.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy299.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy300.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy301.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy334.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 820,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy337.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 23
+					},
+					"frame": {
+						"x": 404,
+						"y": 1053,
+						"w": 19,
+						"h": 23
+					}
+				},
+				{
+					"filename": "strongfairy338.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 23
+					},
+					"frame": {
+						"x": 404,
+						"y": 1053,
+						"w": 19,
+						"h": 23
+					}
+				},
+				{
+					"filename": "strongfairy304.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 423,
+						"y": 1053,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy305.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 445,
+						"y": 1043,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy306.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 445,
+						"y": 1043,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy307.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 445,
+						"y": 1043,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy309.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 467,
+						"y": 1046,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy310.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 417,
+						"y": 1080,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy311.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 385,
+						"y": 1140,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy198.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy199.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy241.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy242.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy243.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy315.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy325.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy326.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy327.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy346.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1113,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy290.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1140,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy295.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1140,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy335.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1140,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy339.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 407,
+						"y": 1140,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy312.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 445,
+						"y": 1070,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy313.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 467,
+						"y": 1073,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy314.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 467,
+						"y": 1073,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy342.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 324,
+						"y": 1160,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy292.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 346,
+						"y": 1160,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy293.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 346,
+						"y": 1160,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy294.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 346,
+						"y": 1160,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy296.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 365,
+						"y": 1159,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy343.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 384,
+						"y": 1167,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy344.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 22,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 22,
+						"h": 27
+					},
+					"frame": {
+						"x": 384,
+						"y": 1167,
+						"w": 22,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy298.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 406,
+						"y": 1167,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy316.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 1107,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy321.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 1107,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy347.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 1107,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy351.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 1107,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy318.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 1134,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy319.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 1134,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy320.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 426,
+						"y": 1134,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy322.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 445,
+						"y": 1097,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy324.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 27
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 27
+					},
+					"frame": {
+						"x": 445,
+						"y": 1124,
+						"w": 19,
+						"h": 27
+					}
+				},
+				{
+					"filename": "strongfairy336.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 25
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 25
+					},
+					"frame": {
+						"x": 464,
+						"y": 1100,
+						"w": 19,
+						"h": 25
+					}
+				},
+				{
+					"filename": "strongfairy348.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 25
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 25
+					},
+					"frame": {
+						"x": 464,
+						"y": 1125,
+						"w": 19,
+						"h": 25
+					}
+				},
+				{
+					"filename": "strongfairy352.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 11,
+						"h": 11
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 325,
+						"y": 791,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "strongfairy369.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 11,
+						"h": 11
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 325,
+						"y": 791,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "strongfairy380.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 11,
+						"h": 11
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 325,
+						"y": 791,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "strongfairy389.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 11,
+						"h": 11
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 11,
+						"h": 11
+					},
+					"frame": {
+						"x": 426,
+						"y": 847,
+						"w": 11,
+						"h": 11
+					}
+				},
+				{
+					"filename": "strongfairy349.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 23
+					},
+					"frame": {
+						"x": 445,
+						"y": 1151,
+						"w": 19,
+						"h": 23
+					}
+				},
+				{
+					"filename": "strongfairy350.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 19,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 19,
+						"h": 23
+					},
+					"frame": {
+						"x": 445,
+						"y": 1151,
+						"w": 19,
+						"h": 23
+					}
+				},
+				{
+					"filename": "strongfairy353.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1,
+						"h": 1
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1,
+						"h": 1
+					},
+					"frame": {
+						"x": 339,
+						"y": 555,
+						"w": 1,
+						"h": 1
+					}
+				},
+				{
+					"filename": "strongfairy379.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1,
+						"h": 1
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1,
+						"h": 1
+					},
+					"frame": {
+						"x": 339,
+						"y": 555,
+						"w": 1,
+						"h": 1
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:5a72471301dbbd74e2373082c748f965:15aeedd7c0e55b09698fdebe72bffe62:8b3c0ac47a5e9d88fbfd4073fc271f83$"
+	}
+}
