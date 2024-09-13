@@ -1,0 +1,734 @@
+{
+	"textures": [
+		{
+			"image": "dog_sprite.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 760,
+				"h": 216
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "dog_sprite-33.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 32,
+						"w": 86,
+						"h": 64
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 86,
+						"h": 64
+					}
+				},
+				{
+					"filename": "dog_sprite-32.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 29,
+						"w": 83,
+						"h": 67
+					},
+					"frame": {
+						"x": 89,
+						"y": 1,
+						"w": 83,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 14,
+						"w": 47,
+						"h": 82
+					},
+					"frame": {
+						"x": 1,
+						"y": 67,
+						"w": 47,
+						"h": 82
+					}
+				},
+				{
+					"filename": "dog_sprite-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 38,
+						"w": 83,
+						"h": 56
+					},
+					"frame": {
+						"x": 174,
+						"y": 1,
+						"w": 83,
+						"h": 56
+					}
+				},
+				{
+					"filename": "dog_sprite-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 38,
+						"w": 83,
+						"h": 56
+					},
+					"frame": {
+						"x": 259,
+						"y": 1,
+						"w": 83,
+						"h": 56
+					}
+				},
+				{
+					"filename": "dog_sprite-31.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 26,
+						"w": 80,
+						"h": 70
+					},
+					"frame": {
+						"x": 344,
+						"y": 1,
+						"w": 80,
+						"h": 70
+					}
+				},
+				{
+					"filename": "dog_sprite-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 23,
+						"w": 74,
+						"h": 73
+					},
+					"frame": {
+						"x": 174,
+						"y": 59,
+						"w": 74,
+						"h": 73
+					}
+				},
+				{
+					"filename": "dog_sprite-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 23,
+						"w": 65,
+						"h": 73
+					},
+					"frame": {
+						"x": 50,
+						"y": 70,
+						"w": 65,
+						"h": 73
+					}
+				},
+				{
+					"filename": "dog_sprite-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 14,
+						"w": 47,
+						"h": 82
+					},
+					"frame": {
+						"x": 117,
+						"y": 70,
+						"w": 47,
+						"h": 82
+					}
+				},
+				{
+					"filename": "dog_sprite-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 29,
+						"w": 47,
+						"h": 67
+					},
+					"frame": {
+						"x": 50,
+						"y": 145,
+						"w": 47,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 32,
+						"w": 47,
+						"h": 64
+					},
+					"frame": {
+						"x": 1,
+						"y": 151,
+						"w": 47,
+						"h": 64
+					}
+				},
+				{
+					"filename": "dog_sprite-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 17,
+						"w": 47,
+						"h": 79
+					},
+					"frame": {
+						"x": 250,
+						"y": 59,
+						"w": 47,
+						"h": 79
+					}
+				},
+				{
+					"filename": "dog_sprite-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 26,
+						"w": 71,
+						"h": 70
+					},
+					"frame": {
+						"x": 166,
+						"y": 134,
+						"w": 71,
+						"h": 70
+					}
+				},
+				{
+					"filename": "dog_sprite-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 35,
+						"w": 47,
+						"h": 61
+					},
+					"frame": {
+						"x": 99,
+						"y": 154,
+						"w": 47,
+						"h": 61
+					}
+				},
+				{
+					"filename": "dog_sprite-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 26,
+						"w": 71,
+						"h": 70
+					},
+					"frame": {
+						"x": 426,
+						"y": 1,
+						"w": 71,
+						"h": 70
+					}
+				},
+				{
+					"filename": "dog_sprite-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 29,
+						"w": 71,
+						"h": 67
+					},
+					"frame": {
+						"x": 499,
+						"y": 1,
+						"w": 71,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 23,
+						"w": 65,
+						"h": 73
+					},
+					"frame": {
+						"x": 572,
+						"y": 1,
+						"w": 65,
+						"h": 73
+					}
+				},
+				{
+					"filename": "dog_sprite-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 17,
+						"w": 47,
+						"h": 79
+					},
+					"frame": {
+						"x": 499,
+						"y": 70,
+						"w": 47,
+						"h": 79
+					}
+				},
+				{
+					"filename": "dog_sprite-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 29,
+						"w": 71,
+						"h": 67
+					},
+					"frame": {
+						"x": 299,
+						"y": 73,
+						"w": 71,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 29,
+						"w": 47,
+						"h": 67
+					},
+					"frame": {
+						"x": 239,
+						"y": 140,
+						"w": 47,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 23,
+						"w": 65,
+						"h": 73
+					},
+					"frame": {
+						"x": 372,
+						"y": 73,
+						"w": 65,
+						"h": 73
+					}
+				},
+				{
+					"filename": "dog_sprite-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 29,
+						"w": 71,
+						"h": 67
+					},
+					"frame": {
+						"x": 288,
+						"y": 142,
+						"w": 71,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 29,
+						"w": 71,
+						"h": 67
+					},
+					"frame": {
+						"x": 361,
+						"y": 148,
+						"w": 71,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 29,
+						"w": 47,
+						"h": 67
+					},
+					"frame": {
+						"x": 434,
+						"y": 148,
+						"w": 47,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 29,
+						"w": 47,
+						"h": 67
+					},
+					"frame": {
+						"x": 439,
+						"y": 73,
+						"w": 47,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 23,
+						"w": 65,
+						"h": 73
+					},
+					"frame": {
+						"x": 639,
+						"y": 1,
+						"w": 65,
+						"h": 73
+					}
+				},
+				{
+					"filename": "dog_sprite-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 32,
+						"w": 71,
+						"h": 64
+					},
+					"frame": {
+						"x": 548,
+						"y": 76,
+						"w": 71,
+						"h": 64
+					}
+				},
+				{
+					"filename": "dog_sprite-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 32,
+						"w": 71,
+						"h": 64
+					},
+					"frame": {
+						"x": 621,
+						"y": 76,
+						"w": 71,
+						"h": 64
+					}
+				},
+				{
+					"filename": "dog_sprite-30.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 23,
+						"w": 65,
+						"h": 73
+					},
+					"frame": {
+						"x": 694,
+						"y": 76,
+						"w": 65,
+						"h": 73
+					}
+				},
+				{
+					"filename": "dog_sprite-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 29,
+						"w": 47,
+						"h": 67
+					},
+					"frame": {
+						"x": 706,
+						"y": 1,
+						"w": 47,
+						"h": 67
+					}
+				},
+				{
+					"filename": "dog_sprite-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 32,
+						"w": 71,
+						"h": 64
+					},
+					"frame": {
+						"x": 548,
+						"y": 142,
+						"w": 71,
+						"h": 64
+					}
+				},
+				{
+					"filename": "dog_sprite-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 32,
+						"w": 71,
+						"h": 64
+					},
+					"frame": {
+						"x": 621,
+						"y": 142,
+						"w": 71,
+						"h": 64
+					}
+				},
+				{
+					"filename": "dog_sprite-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 32,
+						"w": 47,
+						"h": 64
+					},
+					"frame": {
+						"x": 483,
+						"y": 151,
+						"w": 47,
+						"h": 64
+					}
+				},
+				{
+					"filename": "dog_sprite-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 32,
+						"w": 47,
+						"h": 64
+					},
+					"frame": {
+						"x": 694,
+						"y": 151,
+						"w": 47,
+						"h": 64
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:1594c4b92d9f448cfe49fc32eba36030:d888bf898b78108f93880d5f9d688a5f:54b61d282b77bfc1bcb194475f3d4cac$"
+	}
+}

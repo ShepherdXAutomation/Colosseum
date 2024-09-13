@@ -60,42 +60,51 @@ def signup():
             # Now create new instances of the initial characters for this player
             initial_characters = [
                 {
-                    "name": "Villager",
-                    "hp": 50,
-                    "attack": 5,
-                    "defense": 5,
-                    "speed": 5,
-                    "luck": 5,
-                    "magic": 0,
-                    "level": 1,
-                    "skill1": "Harvest",
-                    "skill2": "Craft",
-                    "image_path": "/static/villager.png",
-                    "personality": "Hardworking and friendly.",
-                    "personality_description": "Hardworking and friendly. A person of very few words.",
-                    "neutral_points": 0,
-                    "positive_points": 0,
-                    "negative_points": 0,
-                    "name_asked": "no"
-                },
-                {
-                    "name": "Friendly Dog",
-                    "hp": 30,
-                    "attack": 3,
-                    "defense": 2,
-                    "speed": 6,
-                    "luck": 8,
-                    "magic": 0,
-                    "level": 1,
-                    "skill1": "Bark",
-                    "skill2": "Fetch",
-                    "image_path": "/static/shaggy_brown_dog.png",
-                    "personality": "Loyal and friendly.",
-                    "personality_description": "Only says 'Woof'. Sometimes responds with actions a dog would do. These appear in asterisks. Likes bones and wagging tail. Will comfort you and give you a lick.",
-                    "neutral_points": 0,
-                    "positive_points": 0,
-                    "negative_points": 0,
-                    "name_asked": "no"
+                        "name": "Villager",
+                        "hp": 50,
+                        "attack": 5,
+                        "defense": 5,
+                        "speed": 5,
+                        "luck": 5,
+                        "magic": 0,
+                        "level": 1,
+                        "skill1": "Harvest",
+                        "skill2": "Craft",
+                        "image_path": "/static/villager.png",
+                        "personality": "Hardworking and friendly.",
+                        "personality_description": "Hardworking and friendly. A person of very few words.",
+                        "neutral_points": 0,
+                        "positive_points": 0,
+                        "negative_points": 0,
+                        "name_asked": "no",
+                        "sprite_sheet_path": "/static/images/sprites/villager_sprite.png",
+                        "sprite_json_path": "/static/images/sprites/villager_sprite.json",
+                        "sound_folder_path": "/static/sounds/villager",
+                        "class": "Villager"
+
+                    },
+                    {
+                        "name": "Friendly Dog",
+                        "hp": 60,
+                        "attack": 7,
+                        "defense": 4,
+                        "speed": 8,
+                        "luck": 10,
+                        "magic": 0,
+                        "level": 1,
+                        "skill1": "Fetch",
+                        "skill2": "Bark",
+                        "image_path": "/static/shaggy_brown_dog.png",
+                        "personality": "Loyal and playful.",
+                        "personality_description": "Only says 'Woof'. Sometimes responds with actions a dog would do. These appear in asterisks. Likes bones and wagging tail. Will comfort you and give you a lick.",
+                        "neutral_points": 0,
+                        "positive_points": 0,
+                        "negative_points": 0,
+                        "name_asked": "no",
+                        "sprite_sheet_path": "/static/images/sprites/dog_sprite.png",
+                        "sprite_json_path": "/static/images/sprites/dog_sprite.json",
+                        "sound_folder_path": "/static/sounds/dog",
+                        "class":"Dog"
                 }
             ]
 
@@ -103,9 +112,9 @@ def signup():
                 logging.debug(f"Inserting character {char['name']} for player {username}")
                 
                 # Insert a new instance of each character for this player
-                c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality, personality_description, neutral_points, positive_points, negative_points, name_asked )
-                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                          (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["personality_description"], char["neutral_points"], char["positive_points"], char["negative_points"], char["name_asked"]))
+                c.execute('''INSERT INTO characters (name, hp, attack, defense, speed, luck, magic, level, skill1, skill2, image_path, personality, personality_description, neutral_points, positive_points, negative_points, name_asked, sprite_sheet_path, sprite_json_path, sound_folder_path, class )
+                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                          (char["name"], char["hp"], char["attack"], char["defense"], char["speed"], char["luck"], char["magic"], char["level"], char["skill1"], char["skill2"], char["image_path"], char["personality"], char["personality_description"], char["neutral_points"], char["positive_points"], char["negative_points"], char["name_asked"], char["sprite_sheet_path"], char["sprite_json_path"], char["sound_folder_path"], char["class"]))
                 
                 # Get the newly created character's ID
                 new_character_id = c.lastrowid

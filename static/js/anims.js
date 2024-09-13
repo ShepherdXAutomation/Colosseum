@@ -56,7 +56,7 @@ export function createAnimations(scene) {
 
     scene.anims.create({
         key: 'villager-walk',
-        frames: scene.anims.generateFrameNumbers('character', { start: 0, end: 2 }),
+        frames: scene.anims.generateFrameNumbers('character', { start: 62, end: 68 }),
         frameRate: 8,
         repeat: -1
     });

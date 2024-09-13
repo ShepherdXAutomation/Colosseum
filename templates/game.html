@@ -2,202 +2,167 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Colosseum</title>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
     <style>
-       
         body {
             margin: 0;
             padding: 0;
             background-color: sienna;
-            
-        
         }
-        game-container {
+        #game-container {
             width: 70vw;
             height: 100vh;
-           
         }
         canvas {
             width: 70vw;
             height: 80vh;
-            margin-top:5%;
+            margin-top: 5%;
             margin-left: 5%;
-            margin: 5%;
         }
-
     </style>
 </head>
 <body>
-<p>AI Chat Area</p>
-<div id="game-container"></div>
+    <p>AI Chat Area</p>
+    <div id="game-container"></div>
 
- <!-- Embed character data into JavaScript variable -->
- <script>
-    var characterData = {{ character|tojson }};
-</script>
+    <!-- Embed character data into JavaScript variable -->
+    <script>
+        var characterData = {{ character|tojson }};
+    </script>
 
-<script type = "module">
-    // Initialize Phaser configuration
-    console.log("Game is starting"); // Simple test
-    import { createAnimations, setupSoundEvents } from './static/js/anims.js';  // Import the animations
-    var config = {
-        type: Phaser.AUTO,
-        width: 800,
-        height: 600,
-        parent: 'game-container',
-        physics: {
-            default: 'arcade',
-            arcade: {
-                gravity: { y: 0 },
-                debug: false
-            }
-        },
-        scene: {
-            preload: preload,
-            create: create,
-            update: update
+    <script type="module">
+        console.log("Game is starting"); // Simple test
+
+        // Helper function to capitalize the first letter of a string
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
         }
-    };
 
-    var player;
-    var enemy;
-    var cursors;
+        // Dynamically import the correct animations module based on the character's class
+        import(`/static/js/animations/anims_${characterData.class.toLowerCase()}.js`)
+            .then(module => {
+                const functionName = `createAnimations_${characterData.class.toLowerCase()}`;
+                const createAnimationsFunction = module[functionName];
 
-    // Preload assets
- // Preload assets
-function preload() {
-    this.load.image('background', '/static/images/background.png'); // Background
-    if (characterData.sprite_sheet_path && characterData.sprite_json_path) {
-        // If you have a JSON atlas
-        this.load.atlas('character', characterData.sprite_sheet_path, characterData.sprite_json_path);
-    } else if (characterData.sprite_sheet_path) {
-        // If you have a sprite sheet without JSON
-        this.load.spritesheet('character', characterData.sprite_sheet_path, {
-            frameWidth: 64, // Replace with actual frame width
-            frameHeight: 64, // Replace with actual frame height
-            margin: 0,
-            spacing: 0
-        });
-    } else {
-        console.error('Character sprite paths are not provided.');
-    }
-    
-    this.load.audio('backgroundMusic', 'static/necromancers_tower.ogg');
-    this.load.audio('whipSound', 'static/whip.wav');
-    this.load.atlas('strongfairy', '/static/images/sprites/strongfairy-1.png', '/static/images/sprites/strongfairy-1.json');
-   
-}
+                if (!createAnimationsFunction) {
+                    console.error(`Animation function '${functionName}' not found for class '${characterData.class}'.`);
+                    return;
+                }
 
-// Create the game scene
-function create() {
-    // Add background
-    const background = this.add.image(400, 300, 'background');
-    const bottomLeft = getBottomLeftCorner(background);
-    const bottomRight = getBottomRightCorner(background);
+                // Initialize Phaser configuration
+                const config = {
+                    type: Phaser.AUTO,
+                    width: 800,
+                    height: 600,
+                    parent: 'game-container',
+                    physics: {
+                        default: 'arcade',
+                        arcade: {
+                            gravity: { y: 0 },
+                            debug: false
+                        }
+                    },
+                    scene: {
+                        preload: preload,
+                        create: create,
+                        update: update
+                    }
+                };
 
-    // Play background music
-    var music = this.sound.add('backgroundMusic', {
-        loop: true
-    });
-    music.play();
+                let player;
+                let enemy;
+                let cursors;
+                let sceneReference;
 
- 
+                // Start the Phaser game with the configuration
+                const game = new Phaser.Game(config);
 
-    // Add player/enemy sprite and enable physics
-    let player = this.physics.add.sprite(400, bottomLeft.y, 'character');
-    let enemy = this.add.sprite(400, 150, 'strongfairy');
+                function preload() {
+                    sceneReference = this; // Save reference to the scene
 
-    // Create animations using imported function
-    createAnimations(this);
+                    // Load background
+                    this.load.image('background', '/static/images/background.png');
 
-    // Create sounds
-       // Sounds
-       var whipSound = this.sound.add('whipSound');
-    const soundConfig = {
-        'fairy-whip': {
-            4: whipSound  // Play whip sound at frame 4
-        }
-        // Add more animations and frames as needed
-    };
-    setupSoundEvents(this, enemy, soundConfig);
-    
-    // Set bounce and collide with world bounds
-    player.setBounce(0.2);
-    player.setCollideWorldBounds(true);
+                    // Load character sprite sheet based on class
+                    if (characterData.sprite_sheet_path && characterData.sprite_json_path) {
+                        // If you have a JSON atlas
+                        this.load.atlas(`${characterData.class.toLowerCase()}_sprite`, characterData.sprite_sheet_path, characterData.sprite_json_path);
+                    } else if (characterData.sprite_sheet_path) {
+                        // If you have a sprite sheet without JSON
+                        this.load.spritesheet(`character_${characterData.class.toLowerCase()}`, characterData.sprite_sheet_path, {
+                            frameWidth: 64, // Replace with actual frame width
+                            frameHeight: 64, // Replace with actual frame height
+                            margin: 0,
+                            spacing: 0
+                        });
+                    } else {
+                        console.error('Character sprite paths are not provided.');
+                    }
 
-    // Play animations
-    player.anims.play('villager-walk');
-    enemy.anims.play('fairy-walk-down');
+                    // Load other assets as needed
+                    this.load.audio('backgroundMusic', '/static/necromancers_tower.ogg');
+                
+                    //
+                }
 
-    enemy.on('animationupdate', function (animation, frame) {
-    if (animation.key === 'fairy-whip' && frame.index === 4) {
-    whipSound.play();  // Play sound at frame 4
-    }
-    });
+                function create() {
+                    // Add background
+                    this.add.image(400, 300, 'background');
 
-    // Tween logic remains the same
-    this.tweens.add({
-        targets: player,
-        y: 450,
-        ease: 'Linear',
-        duration: 4000,
-        repeat: 0,
-        onComplete: function() {
-            player.anims.play('idle');
-        }
-    });
-    
-    this.tweens.add({
-        targets: enemy,
-        y: 300,
-        ease: 'Linear',
-        duration: 4000,
-        repeat: 0,
-        onComplete: function() {
-            enemy.anims.play('fairy-dance');
-            enemy.scene.time.delayedCall(1000, function() {
-                enemy.anims.play('fairy-whip');
-                enemy.scene.time.delayedCall(1000, function() {
-                    enemy.anims.play('fairy-idle');
+                    // Play background music
+                    var music = this.sound.add('backgroundMusic', {
+                        loop: true
+                    });
+                    music.play();
+                    console.log(`character_${characterData.class.toLowerCase()}`)
+                    // Add player sprite and enable physics
+                    player = this.physics.add.sprite(400, 570, `character_${characterData.class.toLowerCase()}`);
+                   
+                    player.setBounce(0.2);
+                    player.setCollideWorldBounds(true);
+
+                   
+                   
+
+                    // Create animations
+                    createAnimationsFunction(this);
+
+                    // Now that animations are created, play them
+                    player.anims.play(`${characterData.class.toLowerCase()}-walk-up`);
+                    
+                 
+              
+
+                    // Tweens or other animations
+                this.tweens.add({
+                    targets: player,
+                    y: 400,  // Move horizontally
+                    ease: 'Linear',
+                    duration: 4000,
+                    repeat: 0,
+                    onComplete: function() {
+                        player.anims.play(`${characterData.class.toLowerCase()}-idle-up`);
+                    }
                 });
+
+                   
+
+                    // Enable keyboard input
+                    cursors = this.input.keyboard.createCursorKeys();
+                }
+
+                function update() {
+                    // Handle player input and game logic
+                    if (cursors.space.isDown && player.body.touching.down) {
+                        player.setVelocityY(-330);
+                    }
+                }
+            })
+            .catch(error => {
+                console.error(`Failed to load animations for class '${characterData.class}':`, error);
             });
-        }
-    });
-
-    // Enable keyboard input
-    cursors = this.input.keyboard.createCursorKeys();
-}
-
-    // Update loop for the game
-    function update() {
-        // Jump when pressing the space bar and on the ground
-        if (cursors.space.isDown && player.body.touching.down) {
-            player.setVelocityY(-330);
-        }
-    }
-
-    // Start the Phaser game with the configuration
-    var game = new Phaser.Game(config);
-
-
-    // Function to get the bottom-left corner of the background image
-function getBottomLeftCorner(background) {
-    const x = background.x - background.displayWidth / 2;
-    const y = background.y + background.displayHeight / 2;
-    return { x, y };
-}
-
-// Function to get the x and y coordinates of the bottom-right corner of the background image
-function getBottomRightCorner(background) {
-    const x = background.x + background.displayWidth / 2;
-    const y = background.y + background.displayHeight / 2;
-    return { x, y };
-}
-
-
-</script>
-<p>Player Chat Area</p>
+    </script>
+    <p>Player Chat Area</p>
 </body>
 </html>
