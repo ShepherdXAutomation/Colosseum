@@ -112,7 +112,7 @@ def send_chatgpt_api(character, chat_input, memories):
                 {"role": "user", "content": chat_input}
             ],
             max_tokens=1000,
-            temperature=0.67,
+            temperature=0.7,
             top_p=1.0
         )
 

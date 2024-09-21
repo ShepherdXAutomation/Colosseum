@@ -74,6 +74,28 @@
                 let enemy;
                 let cursors;
                 let sceneReference;
+                let sword;
+                let handOffsetX = 20; // Adjust these values based on your character's sprite
+                let handOffsetY = 0;
+                let characterClass = characterData.class.toLowerCase();
+                let walkRightKey = `${characterClass}-walk-right`;
+                let idleRightKey = `${characterClass}-idle-right`;
+                const handOffsets = {
+                    [walkRightKey]: [
+                    { x: 15, y: 0 },   // Frame 0
+                    { x: 15, y: 0 },   // Frame 1
+                    { x: 14, y: 0 },   // Frame 2
+                    { x: 16, y: 0 },   // Frame 3
+                    { x: 11, y: 0 },   // Frame 4
+                    { x: 15, y: 0 },   // Frame 5
+                    { x: 15, y: 0 },   // Frame 6
+                    { x: 12, y: 0 },   // Frame 7
+      
+                    ],
+                    [idleRightKey]: [
+                    { x: 15, y: 5} // Frame 0
+                    ]
+                }
 
                 // Start the Phaser game with the configuration
                 const game = new Phaser.Game(config);
@@ -100,6 +122,8 @@
                         console.error('Character sprite paths are not provided.');
                     }
 
+                    // Load weapons and accessories
+                    this.load.image('sword', 'static/images/weapons/swords/sprites/simple_sword.png')
                     // Load other assets as needed
                     this.load.audio('backgroundMusic', '/static/necromancers_tower.ogg');
                 
@@ -116,52 +140,102 @@
                     });
                     music.play();
                     console.log(`character_${characterData.class.toLowerCase()}`)
+
+                    this.sword = this.add.sprite(400,570, 'sword');
+                    this.sword.setOrigin(0.5,0.5)
                     // Add player sprite and enable physics
-                    player = this.physics.add.sprite(400, 570, `character_${characterData.class.toLowerCase()}`);
+                    this.player = this.physics.add.sprite(15, 300, `character_${characterData.class.toLowerCase()}`);
+                    this.player.setScale(get_scaleFactor(`character_${characterData.class.toLowerCase()}`))
                    
-                    player.setBounce(0.2);
-                    player.setCollideWorldBounds(true);
+                    this.player.setBounce(0.2);
+                    this.player.setCollideWorldBounds(true);
 
                    
                    
 
                     // Create animations
                     createAnimationsFunction(this);
+                      
 
                     // Now that animations are created, play them
-                    player.anims.play(`${characterData.class.toLowerCase()}-walk-up`);
+                    this.player.anims.play(`${characterData.class.toLowerCase()}-walk-right`);
                     
                  
               
 
                     // Tweens or other animations
-                this.tweens.add({
-                    targets: player,
-                    y: 400,  // Move horizontally
-                    ease: 'Linear',
-                    duration: 4000,
-                    repeat: 0,
-                    onComplete: function() {
-                        player.anims.play(`${characterData.class.toLowerCase()}-idle-up`);
-                    }
-                });
+                    this.tweens.add({
+    targets: this.player,
+    x: 320,
+    ease: 'Linear',
+    duration: 4000,
+    repeat: 0,
+    onComplete: function() {
+        if (this.player && this.player.anims) {
+            this.player.anims.play(`${characterData.class.toLowerCase()}-idle-right`);
+        } else {
+            console.log("Player or anims is missing");
+        }
+    }.bind(this)  // Bind `this` to the Phaser scene
+});
 
                    
 
                     // Enable keyboard input
                     cursors = this.input.keyboard.createCursorKeys();
                 }
-
+            
                 function update() {
-                    // Handle player input and game logic
-                    if (cursors.space.isDown && player.body.touching.down) {
-                        player.setVelocityY(-330);
-                    }
+    if (this.player) {
+        console.log('Player exists');
+
+        if (this.player.anims) {
+            console.log('Player anims exists');
+
+            if (this.player.anims.currentAnim) {
+                console.log('Current animation key:', this.player.anims.currentAnim.key);
+
+                const animKey = this.player.anims.currentAnim.key;  // Get current animation key
+                const frameIndex = this.player.anims.currentFrame.index;  // Get current frame index
+
+                const animOffsets = handOffsets[animKey];
+                if (animOffsets && animOffsets[frameIndex]) {
+                    const offset = animOffsets[frameIndex];
+                    console.log('Setting sword position to offset:', offset);
+                    this.sword.x = this.player.x + offset.x;
+                    this.sword.y = this.player.y + offset.y;
+                } else {
+                    console.log('Using fallback position for sword');
+                    this.sword.x = this.player.x + 15 ;
+                    this.sword.y = this.player.y;
+                }
+            } else {
+                console.log('No current animation, using default sword position');
+                this.sword.x = this.player.x + 15;
+                this.sword.y = this.player.y;
+            }
+        } else {
+            console.log('No anims component, using default sword position');
+            this.sword.x = this.player.x + 15;
+            this.sword.y = this.player.y;
+        }
+    } else {
+        console.log('Player does not exist');
+    }
+}
+
+                function get_scaleFactor(sprite_name){
+                    if(sprite_name == "character_dog")
+                        return 0.64
+                    else
+                        return 1
+
                 }
             })
             .catch(error => {
                 console.error(`Failed to load animations for class '${characterData.class}':`, error);
             });
+
     </script>
     <p>Player Chat Area</p>
 </body>

@@ -72,7 +72,15 @@ def signup():
                         "skill2": "Craft",
                         "image_path": "/static/villager.png",
                         "personality": "Hardworking and friendly.",
-                        "personality_description": "Hardworking and friendly. A person of very few words.",
+                        "personality_description": ("A blacksmith and village council member from a humble village by the river. "
+                        "From a young age, fascinated by the forge and taught by their father. "
+                        "Lost their mother to an epidemic at 12, instilling a deep sense of responsibility. "
+                        "Took over the forge at 25, bringing prosperity to the village. "
+                        "Elected to the village council, advocating for trade improvements and defense. "
+                        "Dependable, wise, stoic, innovative, and guarded. "
+                        "Strives to protect the village, honor their parents, and foster community growth. "
+                        "Interests include metalwork artistry, storytelling, and herbal studies. "
+                        "Notable traits are scarred hands, an iron amulet from their father, and a deep voice."),
                         "neutral_points": 0,
                         "positive_points": 0,
                         "negative_points": 0,
@@ -96,7 +104,7 @@ def signup():
                         "skill2": "Bark",
                         "image_path": "/static/shaggy_brown_dog.png",
                         "personality": "Loyal and playful.",
-                        "personality_description": "Only says 'Woof'. Sometimes responds with actions a dog would do. These appear in asterisks. Likes bones and wagging tail. Will comfort you and give you a lick.",
+                        "personality_description": "Only says 'Woof'. Sometimes responds with actions a dog would do. These appear in asterisks. Likes bones and wagging tail. Will comfort you and give you a lick. Very good at conveying thoughts and ideas via facial expressions.",
                         "neutral_points": 0,
                         "positive_points": 0,
                         "negative_points": 0,

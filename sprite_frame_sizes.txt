@@ -1,0 +1,2 @@
+villager frame size = 53w x 54h
+dog frame size = 51w x 84h
